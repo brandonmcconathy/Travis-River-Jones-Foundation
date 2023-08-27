@@ -18,7 +18,7 @@ export default function Admin() {
 
   if (!user) {
     return <GoogleSignIn />
-  } else if (user.uid == 'gTBLGowjDle6TbvWciNfxWuMiyG2') {
+  } else if (user.uid == 'rjZZ5Hw7peT3yIu5LJgDwjovCR73') {
     return <AdminPanel />
   } else {
     return(
