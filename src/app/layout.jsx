@@ -6,7 +6,7 @@ import Navbar from './components/navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Create Next App',
+  title: 'Travis River Jones Foundation',
 }
 
 export default function RootLayout({ children }) {
