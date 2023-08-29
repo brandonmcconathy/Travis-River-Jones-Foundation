@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Navbar() {
 
-  const navbarItems = ['Form', 'Posts', 'Contact', 'Admin']
+  const navbarItems = ['Form', 'Scholarships', 'Contact', 'Admin']
 
   return(
     <nav className="flex items-center justify-between bg-slate-300 text-slate-800 font-bold h-20 px-16">

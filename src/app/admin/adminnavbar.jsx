@@ -5,7 +5,7 @@ export default function AdminNavbar() {
   const navbarItems = ['Scholarships', 'Posts', 'Contact', 'Admin']
 
   return(
-    <div className="flex items-center justify-between bg-slate-300 text-slate-800 font-bold h-20 px-16">
+    <div className="flex items-center justify-between bg-gray-400 text-slate-800 font-bold h-20 px-16">
       <h1 className="text-2xl">
         <Link href="/admin">Admin</Link>
       </h1>

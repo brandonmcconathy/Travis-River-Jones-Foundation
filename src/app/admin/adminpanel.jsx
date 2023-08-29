@@ -2,9 +2,9 @@
 
 import { getDocs, collection } from "firebase/firestore"
 import { db, auth } from "../../../lib/firebase"
-import UserDisplay from "./userdisplay"
 import { useEffect, useState } from "react"
 import { signOut } from "firebase/auth"
+import UserDisplay from "./userdisplay"
 
 
 export default function AdminPanel() {
