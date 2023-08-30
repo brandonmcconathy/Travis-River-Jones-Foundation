@@ -20,7 +20,7 @@ export default function Navbar() {
 function NavbarItem({item}) {
   return(
     <li>
-      <Link href={`/${item.toLowerCase()}`}>{`${item}`}</Link>
+      <Link href={`/${item.toLowerCase()}`}>{item}</Link>
     </li>
   )
 }

@@ -19,7 +19,7 @@ export default function AdminNavbar() {
 function NavbarItem({item}) {
   return(
     <li>
-      <Link href={`/admin/${item.toLowerCase()}`}>{`${item}`}</Link>
+      <Link href={`/admin/${item.toLowerCase()}`}>{item}</Link>
     </li>
   )
 }
