@@ -10,7 +10,6 @@ export default function ScholarshipDisplay({scholarshipData}) {
   return(
     <Link href={{
       pathname: `/scholarships/${scholarshipData.id}`,
-      query: scholarshipData
       }}>
       <div className="bg-white m-10 p-4">
         <h1>{title}</h1>
