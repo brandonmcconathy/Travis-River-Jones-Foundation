@@ -2,8 +2,7 @@
 
 import { useState } from "react"
 import { addDoc, collection, serverTimestamp, updateDoc } from 'firebase/firestore'
-import { ref, uploadBytes } from 'firebase/storage'
-import { db, storage } from '../../../../lib/firebase'
+import { db } from '../../../../lib/firebase'
 
 export default function NewScholarship() {
 

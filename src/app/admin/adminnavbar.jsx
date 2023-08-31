@@ -1,8 +1,11 @@
 import Link from "next/link"
+import { signOut } from "firebase/auth"
+import { auth } from "../../../lib/firebase"
+import SignOut from "../components/signout"
 
 export default function AdminNavbar() {
 
-  const navbarItems = ['Scholarships', 'Posts', 'Contact', 'Admin']
+  const navbarItems = ['Scholarships', 'Applications']
 
   return(
     <div className="flex items-center justify-between bg-gray-400 text-slate-800 font-bold h-20 px-16">
@@ -11,6 +14,9 @@ export default function AdminNavbar() {
       </h1>
       <ul className="flex gap-8 text-lg">
         {navbarItems.map((item, index) => <NavbarItem item={item} key={index} />)}
+        <li>
+          <SignOut />
+        </li>
       </ul>
     </div>
   )
