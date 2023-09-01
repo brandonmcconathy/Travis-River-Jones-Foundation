@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { addDoc, collection, serverTimestamp, updateDoc } from 'firebase/firestore'
-import { db } from '../../../../lib/firebase'
+import { db } from "../../../../../lib/firebase"
 
 export default function NewScholarship() {
 
@@ -21,7 +21,7 @@ export default function NewScholarship() {
   }
 
   return(
-    <div>
+    <div className="bg-blue-200 p-10">
       <form autoComplete='off' onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Title:</label>
