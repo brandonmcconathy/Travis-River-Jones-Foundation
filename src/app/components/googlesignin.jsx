@@ -14,7 +14,7 @@ export default function GoogleSignIn() {
 
   return(
     <div className="flex justify-center mt-20">
-      <button onClick={handleClick} className="bg-cream px-4 py-2 rounded-lg font-bold ">Sign in with Google</button>
+      <button onClick={handleClick} className="bg-cream px-4 py-2 rounded-lg font-bold">Sign in with Google</button>
     </div>
   )
 }
