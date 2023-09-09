@@ -7,6 +7,29 @@
 }
 
 html {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+  background-color: #540b03;
+}
+
+.bg-blue {
+  background-color: #335c67;
+}
+
+.text-blue {
+  color: #335c67;
+}
+
+.bg-cream {
+  background-color: #fff3b0;
+}
+.text-cream {
+  color: #fff3b0;
+  text-shadow: black 0px 0px 1px;
+}
+
+.text-orange {
+  color: #e09f3e;
+}
+
+.bg-orange {
+  background-color: #e09f3e;
 }
