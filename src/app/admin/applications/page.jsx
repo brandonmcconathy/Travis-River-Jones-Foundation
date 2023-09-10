@@ -3,7 +3,9 @@
 import { useState, useEffect } from "react"
 import { db } from "../../../../lib/firebase"
 import { getDocs, collection, query, orderBy } from "firebase/firestore"
-import AdminScholarshipDisplay from "./adminscholarshipdisplay"
+import Link from "next/link"
+import timeConverter from "../../../../utils/timeconverter"
+import checkExpired from "../../../../utils/checkexpired"
 
 export default function AdminApplicants() {
 
@@ -11,7 +13,7 @@ export default function AdminApplicants() {
 
   useEffect(() => {
     const getDBData = async () => {
-      const q = query(collection(db, 'scholarships'), orderBy('expiration'))
+      const q = query(collection(db, 'scholarships'), orderBy('timeExpired'))
       const querySnapshot = await getDocs(q)
     
       let tempData = []
@@ -27,11 +29,40 @@ export default function AdminApplicants() {
   }, [])
 
   return(
-    <div className="bg-blue-200 p-10">
-      <h1>Choose a scholarship:</h1>
+    <div className="bg-cream py-5 px-10">
+      <h1 className="font-bold text-2xl mb-12 mt-4">Applications</h1>
+      <h1 className="font-bold text-xl mb-10 ml-8">Choose a scholarship:</h1>
       {scholarshipData.length !== 0 ? 
-        scholarshipData.map( (scholarshipData) => <AdminScholarshipDisplay scholarshipData={scholarshipData} key={scholarshipData.id} />) : 
-        <h1>No submission data</h1>}
+        scholarshipData.map( (scholarshipData) => <ScholarshipDisplay scholarshipData={scholarshipData} key={scholarshipData.id} />) : 
+        <div>
+          <h1 className="font-bold text-lg mb-1">No scholarship data.</h1>
+          <h2 className="text-sm text-gray-700">(Allow some time for data to load)</h2>
+        </div>}
     </div>
   )
+}
+
+const ScholarshipDisplay = ({scholarshipData}) => {
+
+  const {title, description, id, createdAt, timeExpired} = scholarshipData
+
+  const createdAtDate = timeConverter(createdAt.seconds)
+  const expired = checkExpired(timeExpired)
+  const expiredUnix = new Date(timeExpired)
+  const expiredDate = timeConverter(expiredUnix/1000)
+
+  return(
+    <Link href={{pathname: `/admin/applications/${id}`}}>
+      <div className="flex flex-col m-auto bg-white mb-10 px-8 py-6 rounded-xl w-1/2 box-pop">
+          <h1 className="font-bold text-3xl break-words text-clip mb-8">{title}</h1>
+          <h1 className="text-lg break-words mb-8">{description}</h1>
+          <div className="flex justify-between items-center">
+            <h1 className="text-sm mb-2">Created on: {`${createdAtDate.month}/${createdAtDate.day}/${createdAtDate.year}`}</h1>
+            {expired ?
+            <h1 className="text-sm">Expired on {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1> :
+            <h1 className="text-sm">Active until {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1>}
+          </div>
+      </div>
+    </Link>
+    )
 }

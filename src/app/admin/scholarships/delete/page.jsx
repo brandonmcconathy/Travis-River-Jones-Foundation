@@ -35,7 +35,7 @@ export default function DeleteScholarship() {
         scholarshipData.map( (scholarshipData) => <ScholarshipDisplay scholarshipData={scholarshipData} key={scholarshipData.id} />) : 
         <div>
           <h1 className="font-bold text-lg mb-1">No scholarship data.</h1>
-          <h2 className="text-s text-gray-700">(Allow some time for data to load)</h2>
+          <h2 className="text-sm text-gray-700">(Allow some time for data to load)</h2>
         </div>}
     </div>
   )
@@ -68,7 +68,7 @@ const ScholarshipDisplay = ({scholarshipData}) => {
             <h1 className="text-sm">Expired on {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1> :
             <h1 className="text-sm">Active until {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1>}
           </div>
-          <button onClick={handleClick} className="self-end bg-red-600 px-4 py-2 rounded-xl">DELETE</button>
+          <button onClick={handleClick} className="font-bold self-end bg-red-600 px-4 py-2 rounded-xl">DELETE</button>
         </div>
     </div>
     )
