@@ -30,7 +30,7 @@ export default function NewScholarship() {
         </div>
         <div className="mb-10 flex justify-between">
           <label htmlFor="description" className="font-bold text-lg mr-10">Description:</label>
-          <textarea rows='3' cols='50' name='description' id='description' value={scholarshipData.description} onChange={handleChange} required
+          <textarea rows='4' cols='50' name='description' id='description' value={scholarshipData.description} onChange={handleChange} required
           className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></textarea>
         </div>
         <div className="mb-10 flex justify-between items-center">
