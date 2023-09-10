@@ -6,7 +6,7 @@ import { db } from "../../../../../lib/firebase"
 
 export default function NewScholarship() {
 
-  const [scholarshipData, setScholarshipData] = useState({title: '', description: '', expiration: '', applicants: []})
+  const [scholarshipData, setScholarshipData] = useState({title: '', description: '', timeExpired: '', applicants: []})
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -16,7 +16,7 @@ export default function NewScholarship() {
   const handleSubmit = (event) => {
     event.preventDefault()
     addDBData(scholarshipData)
-    setScholarshipData({title: '', description: '', expiration: '', applicants: []})
+    setScholarshipData({title: '', description: '', timeExpired: '', applicants: []})
     alert('Submitted')
   }
 
@@ -34,8 +34,8 @@ export default function NewScholarship() {
           className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></textarea>
         </div>
         <div className="mb-10 flex justify-between items-center">
-          <label htmlFor="expiration" className="font-bold text-lg mr-10">Expiration Time:</label>
-          <input type="datetime-local" name='expiration' id='expiration' value={scholarshipData.expiration} onChange={handleChange} required
+          <label htmlFor="timeExpired" className="font-bold text-lg mr-10">Expiration Time:</label>
+          <input type="datetime-local" name='timeExpired' id='timeExpired' value={scholarshipData.timeExpired} onChange={handleChange} required
           className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></input>
         </div>
         <button type="submit" className='font-bold text-cream text-xl bg-cyan-900 rounded-xl px-8 py-2 self-center'>SUBMIT</button>
@@ -47,7 +47,7 @@ export default function NewScholarship() {
 const addDBData = async (formData) => {
   await addDoc(collection(db, 'scholarships'), {
     ...formData,
-    time: serverTimestamp()
+    createdAt: serverTimestamp()
   }).then((docRef) => {
     updateDoc(docRef, {
       id: docRef.id

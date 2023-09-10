@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { db } from "../../../../../lib/firebase"
 import { getDocs, collection, query, orderBy, doc, deleteDoc } from "firebase/firestore"
+import timeConverter from '../../../../../utils/timeconverter'
+import checkExpired from "../../../../../utils/checkexpired"
 
 export default function DeleteScholarship() {
 
@@ -11,7 +13,7 @@ export default function DeleteScholarship() {
 
   useEffect(() => {
     const getDBData = async () => {
-      const q = query(collection(db, 'scholarships'), orderBy('expiration'))
+      const q = query(collection(db, 'scholarships'), orderBy('timeExpired'))
       const querySnapshot = await getDocs(q)
     
       let tempData = []
@@ -27,18 +29,21 @@ export default function DeleteScholarship() {
   }, [])
 
   return(
-    <div className="bg-blue-200 p-10">
-      <h1>Choose a scholarship:</h1>
+    <div className="bg-cream py-5 px-10">
+      <h1 className="font-bold text-xl mb-10">Choose a scholarship to delete:</h1>
       {scholarshipData.length !== 0 ? 
         scholarshipData.map( (scholarshipData) => <ScholarshipDisplay scholarshipData={scholarshipData} key={scholarshipData.id} />) : 
-        <h1>No submission data</h1>}
+        <div>
+          <h1 className="font-bold text-lg mb-1">No scholarship data.</h1>
+          <h2 className="text-s text-gray-700">(Allow some time for data to load)</h2>
+        </div>}
     </div>
   )
 }
 
 const ScholarshipDisplay = ({scholarshipData}) => {
 
-  const {title, description, id} = scholarshipData
+  const {title, description, id, createdAt, timeExpired} = scholarshipData
   const router = useRouter()
 
   const handleClick = async () => {
@@ -47,11 +52,25 @@ const ScholarshipDisplay = ({scholarshipData}) => {
     router.back()
   }
 
+  const createdAtDate = timeConverter(createdAt.seconds)
+  const expired = checkExpired(timeExpired)
+  const expiredUnix = new Date(timeExpired)
+  const expiredDate = timeConverter(expiredUnix/1000)
+  console.log(expiredDate)
+
   return(
-    <div className="bg-white m-10 p-4">
-        <h1>{title}</h1>
-        <h1>{description}</h1>
-        <button onClick={handleClick}>DELETE</button>
+    <div className="flex flex-col m-auto bg-white mb-10 px-8 py-6 rounded-xl w-1/2">
+        <h1 className="font-bold text-3xl break-words text-clip mb-8">{title}</h1>
+        <h1 className="text-lg break-words mb-8">{description}</h1>
+        <div className="flex justify-between items-center">
+          <div>
+            <h1 className="text-sm mb-2">Created on: {`${createdAtDate.month}/${createdAtDate.day}/${createdAtDate.year}`}</h1>
+            {expired ?
+            <h1>Expired on {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1> :
+            <h1>Active until {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1>}
+          </div>
+          <button onClick={handleClick} className="self-end bg-red-600 px-4 py-2 rounded-xl">DELETE</button>
+        </div>
     </div>
     )
 }
