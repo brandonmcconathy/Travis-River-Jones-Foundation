@@ -2,10 +2,10 @@
 
 export default function Timer({scholarshipData}) {
 
-  const {expiration} = scholarshipData
+  const {timeExpired} = scholarshipData
 
   const currTime = new Date()
-  const newExpiration = new Date(expiration)
+  const newExpiration = new Date(timeExpired)
 
   const difference = new Date((newExpiration - currTime))
 

@@ -43,22 +43,30 @@ const DisplayData = ({scholarshipData}) => {
   return(
     <div>
       <h1 className="font-bold text-xl mb-10">Currently viewing: <span className="underline">{title}</span></h1>
-      {applicants.length !== 0 ?
-        applicants.map((applicant) => <ApplicantDisplay applicantData={applicant} key={applicant.name}/>) :
-        <h1>No applicants</h1>}
+      <div className="flex flex-wrap gap-y-10">
+        {applicants.length !== 0 ?
+          applicants.map((applicant) => <ApplicantDisplay applicantData={applicant} questions={scholarshipData.questions} key={applicant.name}/>) :
+          <h1 className="ml-10 font-bold text-lg">No applicants</h1>}
+      </div>
     </div>
   )
 }
 
-const ApplicantDisplay = ({applicantData}) => {
+const ApplicantDisplay = ({applicantData, questions}) => {
 
   const {name, email, number, answers} = applicantData
-  console.log(applicantData)
 
   return(
-    <div className="bg-white w-1/2 m-auto flex flex-col px-8 py-4 rounded-2xl">
+    <div className="bg-white w-3/4 m-auto flex flex-col px-8 py-4 rounded-2xl">
       <h1 className="font-bold text-2xl mb-1">{name}</h1>
-      <h3 className="text-gray-500 text-sm">{`${email} | ${number}`}</h3>
+      <h3 className="text-gray-500 text-sm mb-3">{`${email} | ${number}`}</h3>
+      <div>
+        {questions.map((question, index) => 
+        <div key={question}>
+          <h1 className="mt-6 mb-1 text-gray-500 text-sm">{question}</h1>
+          <h1 className="ml-4 text-lg">{answers[index]}</h1>
+        </div>)}
+      </div>
     </div>
   )
 }

@@ -52,7 +52,7 @@ export default function NewScholarship() {
           <input type="datetime-local" name='timeExpired' id='timeExpired' value={scholarshipData.timeExpired} onChange={handleChange} required
           className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></input>
         </div>
-        <div className="mb-10 flex justify-between">
+        <div className="mb-14 flex justify-between">
           <label className="font-bold text-lg mr-10">Choose Questions:</label>
           <div className="w-3/4 flex justify-between flex-wrap gap-y-10">
             {formQuestions.map((questions, index) => 
