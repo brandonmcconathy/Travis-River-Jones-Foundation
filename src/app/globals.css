@@ -10,6 +10,10 @@ html {
   background-color: #540b03;
 }
 
+.width-48 {
+  width: 48%;
+}
+
 .bg-blue {
   background-color: #335c67;
 }

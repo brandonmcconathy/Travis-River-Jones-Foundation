@@ -7,7 +7,7 @@ import { formQuestions }  from "../../../../../lib/formquestions"
 
 export default function NewScholarship() {
 
-  const [scholarshipData, setScholarshipData] = useState({title: '', description: '', timeExpired: '', questions: [], applicants: []})
+  const [scholarshipData, setScholarshipData] = useState({title: '', description: '', timeExpired: '', questions: []})
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -15,17 +15,22 @@ export default function NewScholarship() {
   }
 
   const handleClick = (event) => {
-    console.log(event)
-    const { name, value } = event.target
-    console.log(name)
-    setScholarshipData( (prevFormData) => ({ ...prevFormData, [name]: value}))
-    console.log(scholarshipData)
+    const { title } = event.target
+    setScholarshipData( (prevFormData) => ({ ...prevFormData, questions: formQuestions[title]}))
+    document.getElementById(`questions${title}`).classList.add('ring-4')
+    document.getElementById(`questions${title}`).classList.add('ring-gray-300')
+    formQuestions.map((questions, index) => {
+      if (parseInt(title) !== index) {
+        document.getElementById(`questions${index}`).classList.remove('ring-4')
+        document.getElementById(`questions${index}`).classList.remove('ring-gray-300')
+      }
+    })
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
     addDBData(scholarshipData)
-    setScholarshipData({title: '', description: '', timeExpired: '', questions: [], applicants: []})
+    setScholarshipData({title: '', description: '', timeExpired: '', questions: []})
     alert('Submitted')
   }
 
@@ -47,11 +52,14 @@ export default function NewScholarship() {
           <input type="datetime-local" name='timeExpired' id='timeExpired' value={scholarshipData.timeExpired} onChange={handleChange} required
           className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></input>
         </div>
-        <div className="mb-10 flex justify-between items-center">
+        <div className="mb-10 flex justify-between">
           <label className="font-bold text-lg mr-10">Choose Questions:</label>
-          <div className="w-3/4">
-            {/* {formQuestions.map((questions) => <QuestionsDisplay questions={questions} key={questions[0]}/>)} */}
-            {formQuestions.map((questions) => <button type="button" onClick={handleClick} name="questions" value={questions} className="flex flex-col bg-white px-6 py-4 rounded-xl shadow-xl w-1/2">{questions.map((question) => <h1>{question}</h1>)}</button>)}
+          <div className="w-3/4 flex justify-between flex-wrap gap-y-10">
+            {formQuestions.map((questions, index) => 
+            <button type="button" id={`questions${index}`} onClick={handleClick} title={index} key={index} className="flex flex-col bg-white px-6 py-4 rounded-xl shadow-xl width-48">
+              {questions.map((question) => 
+              <h1 title={index} key={question} className="py-4 text-center w-full">{question}</h1>)}
+            </button>)}
           </div>
         </div>
         <button type="submit" className='font-bold text-cream text-xl bg-cyan-900 rounded-xl px-8 py-2 self-center'>SUBMIT</button>
@@ -63,19 +71,11 @@ export default function NewScholarship() {
 const addDBData = async (formData) => {
   await addDoc(collection(db, 'scholarships'), {
     ...formData,
-    createdAt: serverTimestamp()
+    createdAt: serverTimestamp(),
+    applicants: []
   }).then((docRef) => {
     updateDoc(docRef, {
       id: docRef.id
     })
   })
-}
-
-const QuestionsDisplay = ({questions}) => {
-
-  return(
-    <button type="button" name="questions" value={questions} className="flex flex-col bg-white px-6 py-4 rounded-xl shadow-xl w-1/2">
-      {questions.map((question) => <h1 className="text-sm mb-2">{question}</h1>)}
-    </button>
-  )
 }
