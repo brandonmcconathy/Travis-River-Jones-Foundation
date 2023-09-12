@@ -12,7 +12,13 @@ export default function Admin() {
       </div>
       <div className="bg-cyan-900 flex flex-col px-6 py-4 rounded-2xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
         <Link href='/admin/applications' className="text-2xl font-bold mb-4 hover:text-amber-300">Applications</Link>
-        <Link href='/admin/applications' className="text-lg hover:text-amber-300">View applications</Link>
+        <Link href='/admin/applications' className="text-lg mb-1 hover:text-amber-300">View applications</Link>
+      </div>
+      <div className="bg-cyan-900 flex flex-col px-6 py-4 rounded-2xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+        <Link href='/admin/recipients' className="text-2xl font-bold mb-4 hover:text-amber-300">Recipients</Link>
+        <Link href='/admin/recipients/new' className="text-lg mb-1 hover:text-amber-300">New recipient</Link>
+        <Link href='/admin/recipients/view' className="text-lg mb-1 hover:text-amber-300">View recipients</Link>
+        <Link href='/admin/recipients/delete' className="text-lg mb-1 hover:text-amber-300">Delete recipients</Link>
       </div>
     </div>
   )

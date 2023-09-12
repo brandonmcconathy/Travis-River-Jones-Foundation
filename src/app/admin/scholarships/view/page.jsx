@@ -8,7 +8,7 @@ import checkExpired from "../../../../../utils/checkexpired"
 
 export default function DeleteScholarship() {
 
-  let [scholarshipData, setScholarshipData] = useState([])
+  const [scholarshipData, setScholarshipData] = useState([])
 
   useEffect(() => {
     const getDBData = async () => {
