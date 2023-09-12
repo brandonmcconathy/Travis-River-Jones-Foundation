@@ -57,7 +57,7 @@ const ApplicantDisplay = ({applicantData, questions}) => {
   const {name, email, number, answers} = applicantData
 
   return(
-    <div className="bg-white w-3/4 m-auto flex flex-col px-8 py-4 rounded-2xl">
+    <div className="bg-white w-3/4 m-auto flex flex-col px-8 py-4 rounded-2xl box-pop">
       <h1 className="font-bold text-2xl mb-1">{name}</h1>
       <h3 className="text-gray-500 text-sm mb-3">{`${email} | ${number}`}</h3>
       <div>

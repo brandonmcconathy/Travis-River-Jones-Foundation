@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { addDoc, collection, serverTimestamp, updateDoc } from 'firebase/firestore'
 import { db } from "../../../../../lib/firebase"
 import { formQuestions }  from "../../../../../lib/formquestions"
@@ -8,6 +9,7 @@ import { formQuestions }  from "../../../../../lib/formquestions"
 export default function NewScholarship() {
 
   const [scholarshipData, setScholarshipData] = useState({title: '', description: '', timeExpired: '', questions: []})
+  const router = useRouter()
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -19,6 +21,7 @@ export default function NewScholarship() {
     setScholarshipData( (prevFormData) => ({ ...prevFormData, questions: formQuestions[title]}))
     document.getElementById(`questions${title}`).classList.add('ring-4')
     document.getElementById(`questions${title}`).classList.add('ring-gray-300')
+    document.getElementById('submit').disabled = false
     formQuestions.map((questions, index) => {
       if (parseInt(title) !== index) {
         document.getElementById(`questions${index}`).classList.remove('ring-4')
@@ -31,7 +34,8 @@ export default function NewScholarship() {
     event.preventDefault()
     addDBData(scholarshipData)
     setScholarshipData({title: '', description: '', timeExpired: '', questions: []})
-    alert('Submitted')
+    router.push('/admin/scholarships')
+    alert('New scholarship added')
   }
 
   return(
@@ -62,7 +66,7 @@ export default function NewScholarship() {
             </button>)}
           </div>
         </div>
-        <button type="submit" className='font-bold text-cream text-xl bg-cyan-900 rounded-xl px-8 py-2 self-center'>SUBMIT</button>
+        <button id='submit' disabled type="submit" className='font-bold text-cream text-xl bg-cyan-900 rounded-xl px-8 py-2 self-center'>SUBMIT</button>
       </form>
     </div>
   )

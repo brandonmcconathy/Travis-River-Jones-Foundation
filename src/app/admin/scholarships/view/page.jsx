@@ -12,7 +12,7 @@ export default function DeleteScholarship() {
 
   useEffect(() => {
     const getDBData = async () => {
-      const q = query(collection(db, 'scholarships'), orderBy('timeExpired'))
+      const q = query(collection(db, 'scholarships'), orderBy('timeExpired', 'desc'))
       const querySnapshot = await getDocs(q)
     
       let tempData = []

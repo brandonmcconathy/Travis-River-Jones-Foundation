@@ -30,7 +30,7 @@ export default function AdminApplicants() {
 
   return(
     <div className="bg-cream py-5 px-10">
-      <h1 className="font-bold text-2xl mb-12 mt-4">Applications</h1>
+      <h1 className="font-bold text-2xl mb-6 mt-4">Applications</h1>
       <h1 className="font-bold text-xl mb-10 ml-8">Choose a scholarship:</h1>
       {scholarshipData.length !== 0 ? 
         scholarshipData.map( (scholarshipData) => <ScholarshipDisplay scholarshipData={scholarshipData} key={scholarshipData.id} />) : 
@@ -52,16 +52,14 @@ const ScholarshipDisplay = ({scholarshipData}) => {
   const expiredDate = timeConverter(expiredUnix/1000)
 
   return(
-    <Link href={{pathname: `/admin/applications/${id}`}}>
-      <div className="flex flex-col m-auto bg-white mb-10 px-8 py-6 rounded-xl w-1/2 box-pop">
-          <h1 className="font-bold text-3xl break-words text-clip mb-8">{title}</h1>
-          <h1 className="text-lg break-words mb-8">{description}</h1>
-          <div className="flex justify-between items-center">
-            <h1 className="text-sm mb-2">Created on: {`${createdAtDate.month}/${createdAtDate.day}/${createdAtDate.year}`}</h1>
-            {expired ?
-            <h1 className="text-sm">Expired on {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1> :
-            <h1 className="text-sm">Active until {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1>}
-          </div>
+    <Link href={{pathname: `/admin/applications/${id}`}} className="flex flex-col m-auto bg-white mb-10 px-8 py-6 rounded-xl w-1/2 box-pop">
+      <h1 className="font-bold text-3xl break-words text-clip mb-8">{title}</h1>
+      <h1 className="text-lg break-words mb-8">{description}</h1>
+      <div className="flex justify-between items-center">
+        <h1 className="text-sm mb-2">Created on: {`${createdAtDate.month}/${createdAtDate.day}/${createdAtDate.year}`}</h1>
+        {expired ?
+        <h1 className="text-sm">Expired on {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1> :
+        <h1 className="text-sm">Active until {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1>}
       </div>
     </Link>
     )
