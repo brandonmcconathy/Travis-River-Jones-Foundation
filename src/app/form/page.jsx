@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
-import { ref, uploadBytes } from 'firebase/storage'
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { db, storage } from '../../../lib/firebase'
 
 function Form() {
@@ -25,7 +25,12 @@ function Form() {
 
   const uploadImage = () => {
     const storageRef = ref(storage, 'new-img')
-    uploadBytes(storageRef, imageUpload).then(() => {
+    console.log(imageUpload)
+    uploadBytes(storageRef, imageUpload).then((snapshot) => {
+      console.log(snapshot)
+      getDownloadURL(snapshot.ref).then((downloadURL) => {
+        console.log(downloadURL)
+      })
       alert('image uploaded')
     })
   }
