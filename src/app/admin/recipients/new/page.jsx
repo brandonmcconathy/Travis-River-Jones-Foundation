@@ -23,7 +23,6 @@ export default function NewRecipient() {
 
   const addDBData = async () => {
     let recipientRef = ''
-    console.log('starting upload to db')
     await addDoc(collection(db, 'recipients'), {
       ...recipientData,
       createdAt: serverTimestamp(),
@@ -32,20 +31,18 @@ export default function NewRecipient() {
       updateDoc(docRef, {
         id: docRef.id
       })
-      console.log('db upload complete')
     })
 
-    console.log('started image upload')
-    const storageRef = ref(storage, `recipients/${recipientData.name}`)
-    await uploadBytes(storageRef, imageUpload).then((snapshot) => {
-      console.log("upload comeplete")
-      getDownloadURL(snapshot.ref).then((downloadURL) => {
-        console.log('got URL')
-        updateDoc(recipientRef, {
-          image: downloadURL
+    if (imageUpload) {
+      const storageRef = ref(storage, `recipients/${recipientData.name}`)
+      await uploadBytes(storageRef, imageUpload).then((snapshot) => {
+        getDownloadURL(snapshot.ref).then((downloadURL) => {
+          updateDoc(recipientRef, {
+            image: downloadURL
+          })
         })
       })
-    })
+    }
   }
 
   const handleSubmit = (event) => {
