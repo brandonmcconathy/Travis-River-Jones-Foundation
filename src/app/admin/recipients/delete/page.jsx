@@ -57,7 +57,7 @@ const RecipientDisplay = ({recipient}) => {
   }
 
   return(
-    <div className="flex m-auto bg-white mb-10 px-8 py-6 rounded-xl w-1/2 box-pop">
+    <div className="flex m-auto bg-white mb-10 px-8 py-6 rounded-xl w-5/12 box-pop">
       {image == '' ? 
         <img src="/noimg.jpg" className="w-1/3"></img> :
         <img src={image} className="w-1/3 rounded-3xl box-pop"></img>}
