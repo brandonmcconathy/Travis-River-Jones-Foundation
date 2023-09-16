@@ -25,13 +25,11 @@ export default function ViewRecipients() {
     getDBData()
   }, [])
 
-  console.log(recipientData)
-
   return(
     <div className="bg-cream py-5 px-10">
       <h1 className="font-bold text-xl mb-10">Viewing Recipients</h1>
       {recipientData.length !== 0 ?
-        recipientData.map((recipient) => <ApplicantDisplay recipient={recipient} key={recipient.name} />) :
+        recipientData.map((recipient) => <RecipientDisplay recipient={recipient} key={recipient.name} />) :
         <div>
           <h1 className="font-bold text-lg mb-1">No recipient data.</h1>
           <h2 className="text-sm text-gray-700">(Allow some time for data to load)</h2>
@@ -40,7 +38,7 @@ export default function ViewRecipients() {
   )
 }
 
-const ApplicantDisplay = ({recipient}) => {
+const RecipientDisplay = ({recipient}) => {
 
   return(
     <div className="flex m-auto bg-white mb-10 px-8 py-6 rounded-xl w-1/2 box-pop">
