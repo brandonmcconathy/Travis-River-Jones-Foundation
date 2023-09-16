@@ -44,12 +44,18 @@ export default function DeleteScholarship() {
 const ScholarshipDisplay = ({scholarshipData}) => {
 
   const {title, description, id, createdAt, timeExpired} = scholarshipData
+
+  const [showDelete, setShowDelete] = useState(0)
   const router = useRouter()
 
   const handleClick = async () => {
     await deleteDoc(doc(db, 'scholarships', id))
     alert('scholarship deleted')
     router.back()
+  }
+
+  const changeDelete = () => {
+    setShowDelete(1)
   }
 
   const createdAtDate = timeConverter(createdAt.seconds)
@@ -68,7 +74,9 @@ const ScholarshipDisplay = ({scholarshipData}) => {
             <h1 className="text-sm">Expired on {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1> :
             <h1 className="text-sm">Active until {`${expiredDate.month}/${expiredDate.day}/${expiredDate.year}`}</h1>}
           </div>
-          <button onClick={handleClick} className="font-bold self-end bg-red-600 px-4 py-2 rounded-xl">DELETE</button>
+          {!showDelete ? 
+          <button onClick={changeDelete} id='confirm' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">DELETE</button> : 
+          <button onClick={handleClick} id='delete' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">ARE YOU SURE?</button>} 
         </div>
     </div>
     )

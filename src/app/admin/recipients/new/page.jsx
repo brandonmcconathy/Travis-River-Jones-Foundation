@@ -78,7 +78,7 @@ export default function NewRecipient() {
             className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></input>
           </div>
           <div className="mb-10 flex justify-between items-center">
-            <h1 className="font-bold text-lg mr-10">Upload Image:</h1>
+            <h1 className="font-bold text-lg mr-10">Upload Image: <span className="text-gray-700 text-sm">(optional)</span></h1>
             <input type="file" name="image" id="image" onChange={handleImgChange} className='w-3/4'></input>
           </div>
           <button id='submit' type="submit" className='font-bold text-cream text-xl bg-cyan-900 rounded-xl px-8 py-2 self-center'>SUBMIT</button>
