@@ -41,7 +41,7 @@ export default function ViewRecipients() {
 const RecipientDisplay = ({recipient}) => {
 
   return(
-    <div className="flex m-auto bg-white mb-10 px-8 py-6 rounded-xl w-1/2 box-pop">
+    <div className="flex m-auto bg-white mb-10 px-8 py-6 rounded-xl w-5/12 box-pop">
       {recipient.image == '' ? 
         <img src="/noimg.jpg" className="w-1/3 rounded-xl"></img> :
         <img src={recipient.image} className="w-1/3 rounded-xl box-pop"></img>}
