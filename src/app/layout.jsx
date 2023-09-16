@@ -1,9 +1,7 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { inter } from '../../utils/fonts'
 import { Providers } from './providers'
 import Navbar from './components/navbar'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Travis River Jones Foundation',

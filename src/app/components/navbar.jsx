@@ -1,13 +1,14 @@
 import Link from "next/link"
+import { lora } from "../../../utils/fonts"
 
 export default function Navbar() {
 
-  const navbarItems = ['Form', 'Scholarships', 'Contact', 'Admin']
+  const navbarItems = ['About', 'Scholarships', 'Contact', 'Donate']
 
   return(
-    <nav className="flex items-center justify-between bg-gray-400 text-black font-bold h-20 px-16">
+    <nav className={`${lora.className} flex items-center justify-between text-white font-semibold h-20 px-16 border-b border-white`}>
       <h1 className="text-2xl">
-        <Link href="/">Title</Link>
+        <Link href="/">Travis River Jones Foundation</Link>
       </h1>
       <ul className="flex gap-8 text-lg">
         {navbarItems.map((item) => <NavbarItem item={item} key={item} />)}

@@ -6,8 +6,14 @@
   box-sizing: border-box;
 }
 
-html {
+/* html {
   background-color: #540b03;
+} */
+
+html {
+  background-color: rgba(181,13,13,1);
+  background-image: url(https://ssl.gstatic.com/atari/images/simple-header-blended-small.png);
+  background-size: cover;
 }
 
 .width-48 {
