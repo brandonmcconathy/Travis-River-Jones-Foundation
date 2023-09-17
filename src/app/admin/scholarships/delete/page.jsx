@@ -29,7 +29,7 @@ export default function DeleteScholarship() {
   }, [])
 
   return(
-    <div className="bg-cream py-5 px-10">
+    <div className="bg-amber-100 py-5 px-10">
       <h1 className="font-bold text-xl mb-10">Choose a scholarship to delete:</h1>
       {scholarshipData.length !== 0 ? 
         scholarshipData.map( (scholarshipData) => <ScholarshipDisplay scholarshipData={scholarshipData} key={scholarshipData.id} />) : 

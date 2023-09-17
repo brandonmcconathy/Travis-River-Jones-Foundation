@@ -1,6 +1,4 @@
 import Link from "next/link"
-import { signOut } from "firebase/auth"
-import { auth } from "../../../lib/firebase"
 import SignOut from "../components/signout"
 
 export default function AdminNavbar() {

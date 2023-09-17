@@ -20,7 +20,7 @@ export default function Page({params}) {
 
 
   return(
-    <div className="bg-cream py-5 px-10">
+    <div className="bg-amber-100 py-5 px-10">
       {scholarshipData.length !== 0 ? 
         <DisplayData scholarshipData={scholarshipData}/> : 
         <div>

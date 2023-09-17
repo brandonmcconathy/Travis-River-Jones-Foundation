@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Admin() {
 
   return(
-    <div className="bg-cream p-10 flex gap-10 text-cream">
+    <div className="bg-amber-100 p-10 flex gap-10 text-amber-100">
       <div className="flex bg-cyan-900 flex-col px-6 py-4 rounded-2xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
         <Link href='/admin/scholarships' className="text-2xl font-bold mb-4 hover:text-amber-300">Manage Scholarships</Link>
         <Link href='/admin/scholarships/new' className="text-lg mb-1 hover:text-amber-300">New scholarship</Link>

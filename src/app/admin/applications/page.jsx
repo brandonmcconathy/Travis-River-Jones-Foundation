@@ -29,7 +29,7 @@ export default function AdminApplicants() {
   }, [])
 
   return(
-    <div className="bg-cream py-5 px-10">
+    <div className="bg-amber-100 py-5 px-10">
       <h1 className="font-bold text-2xl mb-6 mt-4">Applications</h1>
       <h1 className="font-bold text-xl mb-10 ml-8">Choose a scholarship:</h1>
       {scholarshipData.length !== 0 ? 

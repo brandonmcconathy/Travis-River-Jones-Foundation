@@ -66,7 +66,6 @@ export function Form1({pageId}) {
         </div>
         <button type="submit" className='mt-20 ml-20'>SUBMIT</button>
       </form>
-    </div>
-    
+    </div> 
   )
 }

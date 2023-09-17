@@ -26,7 +26,7 @@ export default function ViewRecipients() {
   }, [])
 
   return(
-    <div className="bg-cream py-5 px-10">
+    <div className="bg-amber-100 py-5 px-10">
       <h1 className="font-bold text-xl mb-10">Viewing Recipients</h1>
       {recipientData.length !== 0 ?
         recipientData.map((recipient) => <RecipientDisplay recipient={recipient} key={recipient.name} />) :

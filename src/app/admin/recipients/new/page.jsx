@@ -53,7 +53,7 @@ export default function NewRecipient() {
   }
 
   return(
-    <div className="bg-cream p-10">
+    <div className="bg-amber-100 p-10">
       <h1 className="text-lg font-bold mb-6">Add new recipient:</h1>
       <div className="flex justify-around">
         <form autoComplete='off' onSubmit={handleSubmit} className="flex flex-col items-left w-1/2">
@@ -81,7 +81,7 @@ export default function NewRecipient() {
             <h1 className="font-bold text-lg mr-10">Upload Image: <span className="text-gray-700 text-sm">(optional)</span></h1>
             <input type="file" name="image" id="image" onChange={handleImgChange} className='w-3/4'></input>
           </div>
-          <button id='submit' type="submit" className='font-bold text-cream text-xl bg-cyan-900 rounded-xl px-8 py-2 self-center'>SUBMIT</button>
+          <button id='submit' type="submit" className='font-bold text-amber-100 text-xl bg-cyan-900 rounded-xl px-8 py-2 self-center'>SUBMIT</button>
         </form>
       </div>
     </div>

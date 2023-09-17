@@ -8,7 +8,7 @@ import { formQuestions }  from "../../../../../lib/formquestions"
 
 export default function NewScholarship() {
 
-  const [scholarshipData, setScholarshipData] = useState({title: '', description: '', timeExpired: '', questions: []})
+  const [scholarshipData, setScholarshipData] = useState({title: '', description: '', timeExpired: '', questions: [], questionForm: null})
   const router = useRouter()
 
   const handleChange = (event) => {
@@ -18,7 +18,7 @@ export default function NewScholarship() {
 
   const handleClick = (event) => {
     const { title } = event.target
-    setScholarshipData( (prevFormData) => ({ ...prevFormData, questions: formQuestions[title]}))
+    setScholarshipData( (prevFormData) => ({ ...prevFormData, questions: formQuestions[title], questionForm: parseInt(title) + 1}))
     document.getElementById(`questions${title}`).classList.add('ring-4')
     document.getElementById(`questions${title}`).classList.add('ring-gray-300')
     document.getElementById('submit').disabled = false
@@ -33,13 +33,12 @@ export default function NewScholarship() {
   const handleSubmit = (event) => {
     event.preventDefault()
     addDBData(scholarshipData)
-    setScholarshipData({title: '', description: '', timeExpired: '', questions: []})
     router.push('/admin/scholarships')
     alert('New scholarship added')
   }
 
   return(
-    <div className="bg-cream p-10">
+    <div className="bg-amber-100 p-10">
       <h1 className="text-lg font-bold mb-6">Add new scholarship:</h1>
       <div className="flex justify-around">
         <form autoComplete='off' onSubmit={handleSubmit} className="flex flex-col items-left w-1/2">
@@ -68,7 +67,7 @@ export default function NewScholarship() {
               </button>)}
             </div>
           </div>
-          <button id='submit' disabled type="submit" className='font-bold text-cream text-xl bg-cyan-900 rounded-xl px-8 py-2 self-center'>SUBMIT</button>
+          <button id='submit' disabled type="submit" className='font-bold text-amber-100 text-xl bg-cyan-900 rounded-xl px-8 py-2 self-center'>SUBMIT</button>
         </form>
       </div>
     </div>
