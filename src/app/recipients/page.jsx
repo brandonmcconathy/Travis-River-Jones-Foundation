@@ -4,9 +4,10 @@ import { useState, useEffect } from "react"
 import { db } from "../../../lib/firebase"
 import { getDocs, collection, query, orderBy } from "firebase/firestore"
 
-export default function ViewRecipients() {
+export default function Recipients() {
 
   const [recipientData, setRecipientData] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const getDBData = async () => {
@@ -20,6 +21,7 @@ export default function ViewRecipients() {
       })
 
       setRecipientData(tempData)
+      setLoading(false)
     }
 
     getDBData()
@@ -28,12 +30,13 @@ export default function ViewRecipients() {
   return(
     <div>
       <h1 className="text-center text-6xl text-white mt-16 mb-24">Recipients</h1>
-      {recipientData.length !== 0 ?
+      {!loading ?
+      recipientData.length !== 0 ?
         recipientData.map((recipient) => <RecipientDisplay recipient={recipient} key={recipient.name} />) :
         <div>
-          <h1 className="font-bold text-lg mb-1">No recipient data.</h1>
-          <h2 className="text-sm text-gray-700">(Allow some time for data to load)</h2>
-        </div>}
+          <h1 className="text-center mt-32 text-amber-100 text-3xl">No recipients</h1>
+        </div> :
+        <h1 className="text-center mt-32 text-amber-100 text-3xl">Loading...</h1>}
     </div>
   )
 }
