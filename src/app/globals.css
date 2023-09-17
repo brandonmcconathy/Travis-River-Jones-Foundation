@@ -8,11 +8,18 @@
 
 /* html {
   background-color: #540b03;
+  #492c2c
+  #5e3c3c
+  #7d4242
+  #513030
+  #774141
+  #7e4343
 } */
 
 html {
   background-image: url('/background-img.png');
   background-size: cover;
+  background-color: #7e4242;
 }
 
 .width-48 {
