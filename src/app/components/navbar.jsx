@@ -3,7 +3,7 @@ import { lora } from "../../../utils/fonts"
 
 export default function Navbar() {
 
-  const navbarItems = ['About', 'Scholarships', 'Contact', 'Donate']
+  const navbarItems = ['About', 'Scholarships', 'Recipients', 'Contact', 'Donate']
 
   return(
     <nav className={`${lora.className} bg-amber-100 flex items-center justify-between text-black font-semibold h-20 px-16`}>

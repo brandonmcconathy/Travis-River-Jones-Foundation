@@ -31,7 +31,7 @@ export default function Scholarships() {
 
   return(
     <div>
-      <h1 className={"text-center text-6xl text-white my-16"}>Scholarships</h1>
+      <h1 className="text-center text-6xl text-white my-16">Scholarships</h1>
       {!loading ?
       <div className="w-3/4 m-auto">
         {scholarshipData.length !== 0 ? 

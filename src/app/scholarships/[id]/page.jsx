@@ -21,7 +21,7 @@ export default function Page({params}) {
   }, [])
 
   if (loading) {
-    return(<h1>Loading...</h1>)
+    return(<h1 className="text-center mt-32 text-amber-100 text-3xl">Loading...</h1>)
   } else {
     if (questionForm == 1) {
       return(<Form1 pageId={params.id}/>)
