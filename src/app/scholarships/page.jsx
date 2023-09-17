@@ -1,6 +1,6 @@
 'use client'
 
-import { getDocs, collection } from "firebase/firestore"
+import { getDocs, collection, query, orderBy } from "firebase/firestore"
 import { db } from "../../../lib/firebase"
 import { useEffect, useState } from "react"
 import Link from "next/link"
@@ -13,7 +13,8 @@ export default function Scholarships() {
 
   useEffect(() => {
     const getDBData = async () => {
-      const querySnapshot = await getDocs(collection(db, 'scholarships'))
+      const q = query(collection(db, 'scholarships'), orderBy('timeExpired'))
+      const querySnapshot = await getDocs(q)
     
       let tempData = []
     
@@ -60,7 +61,7 @@ const ScholarshipDisplay = ({scholarshipData}) => {
           <h1 className="text-lg break-words mb-8 px-4">{description}</h1>
           <div className="flex px-4 justify-between">
             <h1 className="font-semibold">{timeRemaining.days} days {timeRemaining.hours} hours remaining</h1>
-            <Link href={{pathname: `/scholarships/${id}`}} className="bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop">Apply Now</Link>
+            <Link href={{pathname: `/scholarships/${id}`}} className="bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50">Apply Now</Link>
           </div>
       </div>
     )
