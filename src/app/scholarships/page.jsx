@@ -8,7 +8,8 @@ import timer from "../../../utils/timer"
 
 export default function Scholarships() {
 
-  let [scholarshipData, setScholarshipData] = useState([])
+  const [scholarshipData, setScholarshipData] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const getDBData = async () => {
@@ -21,6 +22,7 @@ export default function Scholarships() {
       })
 
       setScholarshipData(tempData)
+      setLoading(false)
     }
 
     getDBData()
@@ -29,19 +31,18 @@ export default function Scholarships() {
   return(
     <div>
       <h1 className={"text-center text-6xl text-white my-16"}>Scholarships</h1>
+      {!loading ?
       <div className="w-3/4 m-auto">
         {scholarshipData.length !== 0 ? 
         <div>
-          <h1 className="-ml-8 mb-8 text-white text-xl">Currently accepting applicants for the following scholarships:</h1>
-          <div>
-            {scholarshipData.map((scholarshipData) => <ScholarshipDisplay scholarshipData={scholarshipData} key={scholarshipData.id} />)}
-          </div>
+          {scholarshipData.map((scholarshipData) => <ScholarshipDisplay scholarshipData={scholarshipData} key={scholarshipData.id} />)}
         </div> : 
-          <div>
-            <h1 className="text-white font-bold text-lg mb-1">No scholarship data.</h1>
-            <h2 className="text-sm text-gray-400">(Allow some time for data to load)</h2>
+          <div className="text-center mt-32">
+            <h1 className="text-amber-100 font-bold text-2xl mb-1">There are currently no active scholarships</h1>
+            <h2 className="text-gray-300 text-lg">Please check back later</h2>
           </div>}
-      </div>
+      </div> :
+      <h1 className="text-center mt-32 text-amber-100 text-3xl">Loading...</h1>}
     </div>
   )
 }
