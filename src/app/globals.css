@@ -11,8 +11,7 @@
 } */
 
 html {
-  background-color: rgba(181,13,13,1);
-  background-image: url(https://ssl.gstatic.com/atari/images/simple-header-blended-small.png);
+  background-image: url('/background-img.png');
   background-size: cover;
 }
 
