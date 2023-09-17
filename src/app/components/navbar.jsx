@@ -6,7 +6,7 @@ export default function Navbar() {
   const navbarItems = ['About', 'Scholarships', 'Contact', 'Donate']
 
   return(
-    <nav className={`${lora.className} flex items-center justify-between text-white font-semibold h-20 px-16 border-b border-white`}>
+    <nav className={`${lora.className} bg-amber-100 flex items-center justify-between text-black font-semibold h-20 px-16`}>
       <h1 className="text-2xl">
         <Link href="/">Travis River Jones Foundation</Link>
       </h1>
