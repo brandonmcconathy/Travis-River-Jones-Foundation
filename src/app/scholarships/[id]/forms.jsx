@@ -56,7 +56,7 @@ export function Form1({pageId}) {
   return(
     <div className='w-3/4 bg-amber-100 font-semibold m-auto mt-10 py-10 px-10 rounded-2xl box-pop'>
       <h1 className="text-center text-3xl font-bold mb-10">{scholarshipData.title}</h1>
-      <div className="mb-32">
+      <div>
         <p className="text-xl text-center mb-8">Thank you for your interest in the Travis River Jones Foundation EMT reimbursement scholarship program. Please read through the scholarship rules before you apply.</p>
         <ul className="mx-16 text-lg list-disc flex flex-col gap-3 my-6">
           <li>You must  successfully complete an EMT program with American EMT Academy or Chaffey Community College within 180 days of receiving the scholarship. Please notify us of your course dates.</li>
@@ -66,12 +66,13 @@ export function Form1({pageId}) {
           </div>
           <li>Scholarship is on a reimbursement basis. You will be required to pay for your course and meet all minimum requirements through American EMT Academy or Chaffey College. When you receive your course completion certificate  you will be eligible for reimbursement. </li>
           <li>Current reimbursement is limited to a maximum of $1,150 ($1000 tuition and $150 for textbook). Receipt and course completion certificate must be submitted within the 180 day threshold.</li>
-          <li>Current applications are being accepted through 6:00 p.m. August 25th,  2023</li>
-          <li>Successful recipient(s) of the TRJ Foundation scholarship will be notified via email and one phone attempt by August 27th, 2023 and will have 72 hours to respond.</li>
+          <li>Current applications are being accepted through <Deadline timeExpired={scholarshipData.timeExpired}/>.</li>
+          <li>Successful recipient(s) of the TRJ Foundation scholarship will be notified via email and one phone attempt by <AfterDeadline timeExpired={scholarshipData.timeExpired}/> and will have 72 hours to respond.</li>
         </ul>
         <p className="text-center">Please contact Heather or Michael Jones with any questions at travisriverjonesfoundation@gmail.com</p>
         <p className="text-center">Please only apply if you have read, understand and agree to all rules and are ready to begin an EMT program.</p>
       </div>
+      <hr className="border-black my-8"></hr>
 
       <form autoComplete='off' onSubmit={handleSubmit} className="px-32 flex flex-col">
         <div className="mb-8 flex flex-col mx-auto w-3/4">
@@ -111,5 +112,30 @@ export function Form1({pageId}) {
         <button type="submit" id="submit" disabled className="mx-auto bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50">SUBMIT</button>
       </form>
     </div> 
+  )
+}
+
+const Deadline = ({timeExpired}) => {
+  const expiredUnix = new Date(timeExpired)
+  const expiredDate = timeConverter(expiredUnix/1000)
+
+  if (expiredDate.hour > 12){
+    expiredDate.time = 'p.m.'
+    expiredDate.hour -= 12
+  } else {
+    expiredDate.time = 'a.m.'
+  }
+
+  return(
+    <span>{`${expiredDate.hour}:${expiredDate.min} ${expiredDate.time} ${expiredDate.month}, ${expiredDate.day}, ${expiredDate.year}`}</span>
+  )
+}
+
+const AfterDeadline = ({timeExpired}) => {
+  const expiredUnix = new Date(timeExpired)
+  const expiredDate = timeConverter(expiredUnix/1000 + 172800)
+
+  return(
+    <span>{`${expiredDate.month}, ${expiredDate.day}, ${expiredDate.year}`}</span>
   )
 }
