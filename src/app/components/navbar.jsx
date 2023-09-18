@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return(
     <>
-      <nav className={`${lora.className} hidden lg:bg-amber-100 lg:flex lg:items-center lg:justify-between lg:text-black lg:font-semibold lg:h-20 lg:px-16`}>
+      <nav className={`${lora.className} hidden lg:flex bg-amber-100 items-center justify-between text-black font-semibold h-20 px-16`}>
         <h1 className="text-2xl">
           <Link href="/">Travis River Jones Foundation</Link>
         </h1>
