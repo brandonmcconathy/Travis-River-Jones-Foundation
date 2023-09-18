@@ -64,8 +64,8 @@ export default function Scholarships() {
           <div className="bg-white w-2/5 mx-auto px-8 py-4 rounded-xl mt-16 text-center mb-20">
             <h1 id="email-text" className="font-bold text-lg mb-6">Enter your email to be notified about new scholarships</h1>
             <form id='email-form' onSubmit={handleSubmit} className="flex flex-col items-center gap-4 w-full">
-              <input type="email" onChange={handleChange} placeholder='Email' required className="bg-amber-100 w-3/4 box-pop px-4 py-2 rounded-xl font-semibold outline-none focus:ring focus:ring-gray-300"></input>
-              <button type="submit" className="bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50">SUBMIT</button>
+              <input type="email" onChange={handleChange} placeholder='Email' required className="bg-amber-100 w-3/4 box-pop px-4 py-2 rounded-xl font-semibold outline-none focus:ring focus:ring-gray-300 transition duration-300"></input>
+              <button type="submit" className="bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">SUBMIT</button>
             </form>
           </div>
       </div> :
@@ -87,7 +87,7 @@ const ScholarshipDisplay = ({scholarshipData}) => {
           <h1 className="text-lg break-words mb-8 px-4">{description}</h1>
           <div className="flex px-4 justify-between">
             <h1 className="font-semibold">{timeRemaining.days} days {timeRemaining.hours} hours remaining</h1>
-            <Link href={{pathname: `/scholarships/${id}`}} className="bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50">Apply Now</Link>
+            <Link href={{pathname: `/scholarships/${id}`}} className="bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">Apply Now</Link>
           </div>
       </div>
     )

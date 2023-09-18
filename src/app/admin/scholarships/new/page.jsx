@@ -45,17 +45,17 @@ export default function NewScholarship() {
           <div className="mb-10 flex justify-between items-center">
             <label htmlFor="title" className="font-bold text-lg mr-10">Title:</label>
             <input type="text" name='title' id='title' value={scholarshipData.title} onChange={handleChange} required 
-            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></input>
+            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-10 flex justify-between">
             <label htmlFor="description" className="font-bold text-lg mr-10">Description:</label>
             <textarea rows='4' cols='50' name='description' id='description' value={scholarshipData.description} onChange={handleChange} required
-            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></textarea>
+            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
           </div>
           <div className="mb-10 flex justify-between items-center">
             <label htmlFor="timeExpired" className="font-bold text-lg mr-10">Expiration Time:</label>
             <input type="datetime-local" name='timeExpired' id='timeExpired' value={scholarshipData.timeExpired} onChange={handleChange} required
-            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></input>
+            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-14 flex justify-between">
             <label className="font-bold text-lg mr-10">Choose Questions:</label>

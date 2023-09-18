@@ -60,22 +60,22 @@ export default function NewRecipient() {
           <div className="mb-10 flex justify-between items-center">
             <label htmlFor="name" className="font-bold text-lg mr-10">Name:</label>
             <input type="text" name='name' id='name' value={recipientData.name} onChange={handleChange} required
-            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></input>
+            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-10 flex justify-between items-center">
             <label htmlFor="scholarship" className="font-bold text-lg mr-10">Scholarship:</label>
             <input type="text" name='scholarship' id='scholarship' value={recipientData.scholarship} onChange={handleChange} required
-            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></input>
+            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-10 flex justify-between items-center">
             <label htmlFor="year" className="font-bold text-lg mr-10">Year:</label>
             <input type="text" name='year' id='year' value={recipientData.year} onChange={handleChange} required
-            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></input>
+            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-10 flex justify-between items-center">
             <label htmlFor="school" className="font-bold text-lg mr-10">School: <span className="text-gray-700 text-sm">(optional)</span></label>
             <input type="text" name='school' id='school' value={recipientData.school} onChange={handleChange}
-            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300"></input>
+            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-10 flex justify-between items-center">
             <div className="flex flex-col">

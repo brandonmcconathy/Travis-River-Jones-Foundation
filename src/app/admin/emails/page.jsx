@@ -28,7 +28,7 @@ export default function Emails() {
       <h1 className="font-bold text-xl mb-10">Email List</h1>
       <div className="bg-white text-center w-1/2 mx-auto px-8 py-4 rounded-xl box-pop">
         <h1 id="email-list" className="text-lg font-semibold mb-5">{emailList.map((email, index) => <EmailDisplay email={email} key={index} />)}</h1>
-        <button onClick={copyText} className="bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50">Copy List</button>
+        <button onClick={copyText} className="bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">Copy List</button>
       </div>
     </div>
   )
