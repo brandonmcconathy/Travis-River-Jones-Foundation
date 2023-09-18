@@ -44,16 +44,25 @@ export default function Recipients() {
 const RecipientDisplay = ({recipient}) => {
 
   return(
-    <div className="flex m-auto bg-white mb-10 px-8 py-6 rounded-xl w-5/12 box-pop">
+    <div>
       {recipient.image == '' ? 
-        <img src="/noimg.jpg" className="w-1/3 rounded-xl"></img> :
-        <img src={recipient.image} className="w-1/3 rounded-xl box-pop"></img>}
-      <div className="flex flex-col items-center justify-center w-2/3">
-        <h1 className="text-center text-2xl font-bold mb-3">{recipient.name}</h1>
-        <h1 className="text-center mb-1">{recipient.scholarship}</h1>
-        <h1 className="text-center mb-1">{recipient.school}</h1>
-        <h1 className="text-center">{recipient.year}</h1>
-      </div>
+        <div className="m-auto bg-white mb-10 px-8 py-6 rounded-xl w-1/3 box-pop">
+          <div className="flex flex-col items-center justify-center w-full">
+            <h1 className="text-center text-2xl font-bold mb-3">{recipient.name}</h1>
+            <h1 className="text-center mb-1">{recipient.scholarship}</h1>
+            <h1 className="text-center mb-1">{recipient.school}</h1>
+            <h1 className="text-center">{recipient.year}</h1>
+          </div>
+        </div> :
+        <div className="flex m-auto bg-white mb-10 px-8 py-6 rounded-xl w-5/12 box-pop">
+          <img src={recipient.image} className="w-1/3 rounded-xl box-pop"></img>
+          <div className="flex flex-col items-center justify-center w-2/3">
+            <h1 className="text-center text-2xl font-bold mb-3">{recipient.name}</h1>
+            <h1 className="text-center mb-1">{recipient.scholarship}</h1>
+            <h1 className="text-center mb-1">{recipient.school}</h1>
+            <h1 className="text-center">{recipient.year}</h1>
+          </div>
+        </div>}
     </div>
   )
 }
