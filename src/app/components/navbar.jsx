@@ -33,7 +33,7 @@ export default function Navbar() {
           {navbarItems.map((item) => <NavbarItem item={item} key={item} />)}
         </ul>
       </nav>
-      <nav className="bg-amber-100 h-12 flex items-center justify-between px-5">
+      <nav className="bg-amber-100 h-12 flex items-center justify-between px-5 lg:hidden">
         <GiHamburgerMenu onClick={handleClick} style={{fontSize: '1.4rem'}} />
         <h1 className="text-xl font-bold">Travis River Jones Foundation</h1>
         <h1 className="invisible"></h1>
