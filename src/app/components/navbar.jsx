@@ -23,6 +23,15 @@ export default function Navbar() {
     setNavState(!navState)
   }
 
+  function NavMenuItems({item}) {
+    return(
+      <li className="w-full px-5">
+        <Link href={`/${item.toLowerCase()}`} onClick={handleClick} className="px-4 py-3">{item}</Link>
+        <hr className="my-4"></hr>
+      </li>
+    )
+  }
+
   return(
     <>
       <nav className={`${lora.className} hidden lg:flex bg-amber-100 items-center justify-between text-black font-semibold h-20 px-16`}>
@@ -35,12 +44,12 @@ export default function Navbar() {
       </nav>
       <nav className="bg-amber-100 h-12 flex items-center justify-between px-5 lg:hidden">
         <GiHamburgerMenu onClick={handleClick} style={{fontSize: '1.4rem'}} />
-        <h1 className="text-xl font-bold">Travis River Jones Foundation</h1>
+        <Link href="/" className="text-xl font-bold">Travis River Jones Foundation</Link>
         <h1 className="invisible"></h1>
         <div id='nav-menu' className="fixed z-10 top-0 left-0 h-full w-0 bg-red-theme text-white flex flex-col duration-500 overflow-x-hidden">
           <AiOutlineClose onClick={handleClick} style={{color: 'white', fontSize: '1.6rem', alignSelf: 'end', marginRight: '1rem', marginTop: '1rem'}} />
           <ul className="flex flex-col just-center items-center text-xl text-center mt-16">
-            {navbarItems.map((item, index) => <NavMenuItems item={item} key={index}/>)}
+            {navbarItems.map((item, index) => <NavMenuItems item={item} handleClick={handleClick} key={index}/>)}
           </ul>
         </div>
       </nav>
@@ -56,11 +65,3 @@ function NavbarItem({item}) {
   )
 }
 
-function NavMenuItems({item}) {
-  return(
-    <li className="w-full px-5">
-      <Link href={`/${item.toLowerCase()}`} className="px-4 py-3">{item}</Link>
-      <hr className="my-4"></hr>
-    </li>
-  )
-}

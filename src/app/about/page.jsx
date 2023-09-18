@@ -2,7 +2,7 @@ export default function Contact() {
   return(
     <div>
       <h1 className="text-center text-6xl text-white mt-16 mb-24">About</h1>
-      <div className="bg-amber-100 mx-auto w-1/2 px-12 py-8 pb-12 rounded-xl flex flex-col box-pop">
+      <div className="bg-amber-100 mx-auto w-11/12 px-12 py-8 pb-12 rounded-xl flex flex-col box-pop lg:w-1/2">
         <h1 className="font-bold text-2xl mb-2">Our Mission:</h1>
         <p className="px-6 text-lg font-semibold">Empower positive change by promoting kindness, goodwill, and enriching the lives of others through our Kindness and EMT Scholarships.</p>
         <hr className="border-black my-8"></hr>
