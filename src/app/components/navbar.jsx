@@ -9,6 +9,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 export default function Navbar() {
 
   const navbarItems = ['About', 'Scholarships', 'Recipients', 'Contact', 'Donate']
+  const navMenuItems = ['Home', 'About', 'Scholarships', 'Recipients', 'Contact', 'Donate']
   const [navState, setNavState] = useState(false)
 
   const handleClick = () => {
@@ -23,7 +24,15 @@ export default function Navbar() {
     setNavState(!navState)
   }
 
-  function NavMenuItems({item}) {
+  function NavMenuDisplay({item}) {
+    if (item == 'Home') {
+      return(
+        <li className="w-full px-5">
+          <Link href='/' onClick={handleClick} className="px-4 py-3">{item}</Link>
+          <hr className="my-4"></hr>
+        </li>
+      )
+    }
     return(
       <li className="w-full px-5">
         <Link href={`/${item.toLowerCase()}`} onClick={handleClick} className="px-4 py-3">{item}</Link>
@@ -49,7 +58,7 @@ export default function Navbar() {
         <div id='nav-menu' className="fixed z-10 top-0 left-0 h-full w-0 bg-red-theme text-white flex flex-col duration-500 overflow-x-hidden">
           <AiOutlineClose onClick={handleClick} style={{color: 'white', fontSize: '1.6rem', alignSelf: 'end', marginRight: '1rem', marginTop: '1rem'}} />
           <ul className="flex flex-col just-center items-center text-xl text-center mt-16">
-            {navbarItems.map((item, index) => <NavMenuItems item={item} handleClick={handleClick} key={index}/>)}
+            {navMenuItems.map((item, index) => <NavMenuDisplay item={item} handleClick={handleClick} key={index}/>)}
           </ul>
         </div>
       </nav>
