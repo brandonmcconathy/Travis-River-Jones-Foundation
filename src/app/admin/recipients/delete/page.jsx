@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import { db } from "../../../../../lib/firebase"
+import { db, storage } from "../../../../../lib/firebase"
 import { getDocs, collection, query, orderBy, doc, deleteDoc } from "firebase/firestore"
+import { ref, deleteObject } from "firebase/storage"
 
 export default function DeleteRecipient() {
 
@@ -48,6 +49,7 @@ const RecipientDisplay = ({recipient}) => {
 
   const handleClick = async () => {
     await deleteDoc(doc(db, 'recipients', id))
+    await deleteObject(ref(storage, `recipients/${name}`))
     alert('recipient deleted')
     router.back()
   }
