@@ -3,7 +3,7 @@ import SignOut from "../components/signout"
 
 export default function AdminNavbar() {
 
-  const navbarItems = ['Scholarships', 'Applications', 'Recipients']
+  const navbarItems = ['Scholarships', 'Applications', 'Recipients', 'Emails']
 
   return(
     <div className="flex items-center justify-between bg-gray-400 text-black font-bold h-20 px-16">
