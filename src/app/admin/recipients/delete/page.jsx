@@ -49,7 +49,9 @@ const RecipientDisplay = ({recipient}) => {
 
   const handleClick = async () => {
     await deleteDoc(doc(db, 'recipients', id))
-    await deleteObject(ref(storage, `recipients/${name}`))
+    if (image !== '') {
+      await deleteObject(ref(storage, `recipients/${name}`))
+    }
     alert('recipient deleted')
     router.back()
   }
