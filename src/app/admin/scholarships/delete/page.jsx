@@ -45,7 +45,7 @@ const ScholarshipDisplay = ({scholarshipData}) => {
 
   const {title, description, id, createdAt, timeExpired} = scholarshipData
 
-  const [showDelete, setShowDelete] = useState(0)
+  const [showDelete, setShowDelete] = useState(false)
   const router = useRouter()
 
   const handleClick = async () => {
@@ -55,7 +55,7 @@ const ScholarshipDisplay = ({scholarshipData}) => {
   }
 
   const changeDelete = () => {
-    setShowDelete(1)
+    setShowDelete(true)
   }
 
   const createdAtDate = timeConverter(createdAt.seconds)

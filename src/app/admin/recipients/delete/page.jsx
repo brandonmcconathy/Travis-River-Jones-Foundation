@@ -44,7 +44,7 @@ const RecipientDisplay = ({recipient}) => {
 
   const { name, scholarship, school, year, image, id } = recipient
 
-  const [showDelete, setShowDelete] = useState(0)
+  const [showDelete, setShowDelete] = useState(false)
   const router = useRouter()
 
   const handleClick = async () => {
@@ -57,7 +57,7 @@ const RecipientDisplay = ({recipient}) => {
   }
 
   const changeDelete = () => {
-    setShowDelete(1)
+    setShowDelete(true)
   }
 
   return(
