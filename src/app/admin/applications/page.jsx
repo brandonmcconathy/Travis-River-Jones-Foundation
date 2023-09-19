@@ -35,7 +35,7 @@ export default function AdminApplicants() {
       <div className="w-[97] m-auto sm:w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2">
       {scholarshipData.length !== 0 ? 
         scholarshipData.map( (scholarshipData) => <ScholarshipDisplay scholarshipData={scholarshipData} key={scholarshipData.id} />) : 
-        <div>
+        <div className="text-center">
           <h1 className="font-bold text-lg mb-1">No scholarship data.</h1>
           <h2 className="text-sm text-gray-700">(Allow some time for data to load)</h2>
         </div>}

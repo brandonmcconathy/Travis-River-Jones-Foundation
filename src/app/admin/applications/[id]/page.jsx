@@ -23,7 +23,7 @@ export default function Page({params}) {
     <div className="bg-amber-100 py-10 px-2">
       {scholarshipData.length !== 0 ? 
         <DisplayData scholarshipData={scholarshipData}/> : 
-        <div>
+        <div className="text-center">
           <h1 className="font-bold text-lg mb-1">No scholarship data.</h1>
           <h2 className="text-sm text-gray-700">(Allow some time for data to load)</h2>
         </div>}
@@ -57,7 +57,7 @@ const ApplicantDisplay = ({applicantData, questions}) => {
   const {name, email, number, answers} = applicantData
 
   return(
-    <div className="bg-white w-[97] m-auto flex flex-col px-4 py-4 rounded-2xl box-pop mt-16 sm:w-11/12 md:w-5/6 lg:px-8 lg:w-3/4 xl:w-2/3 2xl:w-1/2">
+    <div className="bg-white w-[97] m-auto flex flex-col px-4 py-4 rounded-2xl box-pop mt-6 sm:w-11/12 md:w-5/6 lg:px-8 lg:w-3/4 xl:w-2/3 2xl:w-1/2">
       <h1 className="font-bold text-2xl mb-1 text-center">{name}</h1>
       <h3 className="text-gray-500 text-sm text-center sm:mb-2">{`${email} | ${number}`}</h3>
       <div>
@@ -68,5 +68,5 @@ const ApplicantDisplay = ({applicantData, questions}) => {
         </div>)}
       </div>
     </div>
-)
+  )
 }
