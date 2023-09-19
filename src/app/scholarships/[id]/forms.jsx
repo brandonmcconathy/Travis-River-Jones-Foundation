@@ -93,23 +93,23 @@ export function Form1({pageId}) {
           <label className="font-bold text-lg leading-snug">How did you hear about this scholarship?</label>
           <input type="text" name='answer1' value={formData.answer1} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
         </div>
-        <div className="mb-10 flex flex-col mx-auto w-3/4">
-          <label className="font-bold text-lg mr-10 self-start">Why do you want to be an EMT?</label>
-          <textarea rows='4' cols='50' name='answer2' value={formData.answer2} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 w-full shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
+        <div className="mb-8 flex flex-col mx-2">
+          <label className="font-bold text-lg leading-snug">Why do you want to be an EMT?</label>
+          <textarea rows='4' name='answer2' value={formData.answer2} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
         </div>
-        <div className="mb-10 flex flex-col mx-auto w-3/4">
-          <label className="font-bold text-lg mr-10 self-start">How would this scholarship benefit you?</label>
-          <textarea rows='4' cols='50' name='answer3' value={formData.answer3} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 w-full shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
+        <div className="mb-10 flex flex-col mx-2">
+          <label className="font-bold text-lg leading-snug">How would this scholarship benefit you?</label>
+          <textarea rows='4' cols='50' name='answer3' value={formData.answer3} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
         </div>
-        <div className="mb-10 flex flex-col mx-auto w-3/4">
-          <label className="font-bold leading-snug text-lg mr-10 self-start">Tell us about you last act of kindness or an incident where you helped someone when you didn't need to.</label>
-          <textarea rows='4' cols='50' name='answer4' value={formData.answer4} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 w-full shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
+        <div className="mb-10 flex flex-col mx-2">
+          <label className="font-bold text-lg leading-snug">Tell us about you last act of kindness or an incident where you helped someone when you didn't need to.</label>
+          <textarea rows='4' cols='50' name='answer4' value={formData.answer4} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
         </div>
-        <div className="mb-10 mx-auto w-3/4 flex gap-4">
-          <input type="checkbox" onChange={checkChange}></input>
-          <label className="font-bold">I acknowledge that I have read and agree to the rules and understand the requirements/process.</label>
+        <div className="mb-10 mx-auto w-11/12 flex gap-4 items-center">
+          <input type="checkbox" onChange={checkChange} className="w-1/6"></input>
+          <label className="font-bold text-sm">I acknowledge that I have read and agree to the rules and understand the requirements/process.</label>
         </div>
-        <p id="warning" className="text-center text-gray-700">Please acknowledge the terms before submitting.</p>
+        <p id="warning" className="text-sm text-center text-gray-700 mx-6 mb-1">Please acknowledge the terms before submitting.</p>
         <button type="submit" id="submit" disabled className="mx-auto bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">SUBMIT</button>
       </form>
     </div> 
