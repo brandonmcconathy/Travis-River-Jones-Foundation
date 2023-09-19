@@ -138,9 +138,9 @@ export function Form1({pageId}) {
           </div>
           <div className="mb-10 mx-auto w-11/12 flex gap-4 items-center md:w-3/4">
             <input type="checkbox" onChange={checkChange} className="w-1/6"></input>
-            <label className="font-bold text-sm">I acknowledge that I have read and agree to the rules and understand the requirements/process.</label>
+            <label className="font-bold text-sm">I have read and agree to the rules and understand the requirements/process.</label>
           </div>
-          <p id="warning" className="text-sm text-center text-gray-700 mx-6 mb-1">Please acknowledge the terms before continuing.</p>
+          <p id="warning" className="text-sm text-center text-gray-700 mx-6 mb-1">Please agree to the terms before continuing.</p>
           <button type="submit" id="submit" disabled className="mx-auto bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">REVIEW</button>
         </form>
       </div> 
