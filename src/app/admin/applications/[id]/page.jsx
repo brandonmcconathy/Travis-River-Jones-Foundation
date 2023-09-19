@@ -20,7 +20,7 @@ export default function Page({params}) {
 
 
   return(
-    <div className="bg-amber-100 py-5 px-10">
+    <div className="bg-amber-100 py-10 px-2">
       {scholarshipData.length !== 0 ? 
         <DisplayData scholarshipData={scholarshipData}/> : 
         <div>
@@ -42,11 +42,11 @@ const DisplayData = ({scholarshipData}) => {
 
   return(
     <div>
-      <h1 className="font-bold text-xl mb-10">Currently viewing: <span className="underline">{title}</span></h1>
-      <div className="flex flex-wrap gap-y-10">
+      <h1 className="font-bold text-2xl text-center mb-10">Currently viewing: <span className="underline">{title}</span></h1>
+      <div>
         {applicants.length !== 0 ?
-          applicants.map((applicant) => <ApplicantDisplay applicantData={applicant} questions={scholarshipData.questions} key={applicant.name}/>) :
-          <h1 className="ml-10 font-bold text-lg">No applicants</h1>}
+          applicants.map((applicant, index) => <ApplicantDisplay applicantData={applicant} questions={scholarshipData.questions} key={index}/>) :
+          <h1 className="font-bold text-xl text-center mt-20">No applicants</h1>}
       </div>
     </div>
   )
@@ -57,16 +57,16 @@ const ApplicantDisplay = ({applicantData, questions}) => {
   const {name, email, number, answers} = applicantData
 
   return(
-    <div className="bg-white w-3/4 m-auto flex flex-col px-8 py-4 rounded-2xl box-pop">
-      <h1 className="font-bold text-2xl mb-1">{name}</h1>
-      <h3 className="text-gray-500 text-sm mb-3">{`${email} | ${number}`}</h3>
+    <div className="bg-white w-[97] m-auto flex flex-col px-4 py-4 rounded-2xl box-pop mt-16 sm:w-11/12 md:w-5/6 lg:px-8 lg:w-3/4 xl:w-2/3 2xl:w-1/2">
+      <h1 className="font-bold text-2xl mb-1 text-center">{name}</h1>
+      <h3 className="text-gray-500 text-sm text-center sm:mb-2">{`${email} | ${number}`}</h3>
       <div>
         {questions.map((question, index) => 
         <div key={question}>
           <h1 className="mt-6 mb-1 text-gray-500 text-sm">{question}</h1>
-          <h1 className="ml-4 text-lg">{answers[index]}</h1>
+          <h1 className="mx-2 lg:text-lg">{answers[index]}</h1>
         </div>)}
       </div>
     </div>
-  )
+)
 }

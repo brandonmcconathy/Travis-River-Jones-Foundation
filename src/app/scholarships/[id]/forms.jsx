@@ -67,21 +67,21 @@ export function Form1({pageId}) {
     const questions = scholarshipData.questions
     const answers = [formData.answer1, formData.answer2, formData.answer3, formData.answer4]
     return(
-        <div className="bg-white w-[97] m-auto flex flex-col px-4 py-4 rounded-2xl box-pop mt-16 sm:w-11/12 lg:px-8 lg:w-5/6 xl:w-3/4 2xl:w-2/3">
-          <h1 className="font-bold text-2xl mb-1 text-center">{formData.name}</h1>
-          <h3 className="text-gray-500 text-sm text-center sm:mb-2">{`${formData.email} | ${formData.number}`}</h3>
-          <div>
-            {questions.map((question, index) => 
-            <div key={question}>
-              <h1 className="mt-6 mb-1 text-gray-500 text-sm">{question}</h1>
-              <h1 className="mx-2 lg:text-lg">{answers[index]}</h1>
-            </div>)}
-          </div>
-          <div className="mx-auto flex gap-8 mt-10">
-            <button onClick={handleSubmit} className="mx-auto bg-red-800 px-4 py-2 rounded-xl font-semibold text-white box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">SUBMIT</button>
-            <button onClick={handleReturn} className="mx-auto bg-red-800 px-4 py-2 rounded-xl font-semibold text-white box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">GO BACK</button>
-          </div>
+      <div className="bg-white w-[97] m-auto flex flex-col px-4 py-4 rounded-2xl box-pop mt-16 sm:w-11/12 md:w-5/6 lg:px-8 lg:w-3/4 xl:w-2/3 2xl:w-1/2">
+        <h1 className="font-bold text-2xl mb-1 text-center">{formData.name}</h1>
+        <h3 className="text-gray-500 text-sm text-center sm:mb-2">{`${formData.email} | ${formData.number}`}</h3>
+        <div>
+          {questions.map((question, index) => 
+          <div key={question}>
+            <h1 className="mt-6 mb-1 text-gray-500 text-sm">{question}</h1>
+            <h1 className="mx-2 lg:text-lg">{answers[index]}</h1>
+          </div>)}
         </div>
+        <div className="mx-auto flex gap-8 mt-10">
+          <button onClick={handleSubmit} className="mx-auto bg-red-800 px-4 py-2 rounded-xl font-semibold text-white box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">SUBMIT</button>
+          <button onClick={handleReturn} className="mx-auto bg-red-800 px-4 py-2 rounded-xl font-semibold text-white box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">GO BACK</button>
+        </div>
+      </div>
     )
   } else {
     return(
