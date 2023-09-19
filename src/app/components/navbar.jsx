@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { lora } from "../../../utils/fonts"
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose } from 'react-icons/ai'
 
@@ -43,7 +42,7 @@ export default function Navbar() {
 
   return(
     <>
-      <nav className={`${lora.className} hidden lg:flex bg-amber-100 items-center justify-between text-black font-semibold h-20 px-16`}>
+      <nav className={'hidden lg:flex bg-amber-100 items-center justify-between font-semibold h-20 px-16'}>
         <h1 className="text-2xl">
           <Link href="/">Travis River Jones Foundation</Link>
         </h1>
