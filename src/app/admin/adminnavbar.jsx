@@ -28,14 +28,14 @@ export default function AdminNavbar() {
     if (item == 'Home') {
       return(
         <li className="w-full px-5">
-          <Link href='/' onClick={handleClick} className="px-4 py-3">{item}</Link>
+          <Link href='/admin' onClick={handleClick} className="px-4 py-3">{item}</Link>
           <hr className="my-4"></hr>
         </li>
       )
     }
     return(
       <li className="w-full px-5">
-        <Link href={`/${item.toLowerCase()}`} onClick={handleClick} className="px-4 py-3">{item}</Link>
+        <Link href={`/admin/${item.toLowerCase()}`} onClick={handleClick} className="px-4 py-3">{item}</Link>
         <hr className="my-4"></hr>
       </li>
     )

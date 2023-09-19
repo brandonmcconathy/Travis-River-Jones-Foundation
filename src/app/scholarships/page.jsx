@@ -52,7 +52,7 @@ export default function Scholarships() {
     <div>
       <h1 className="text-center text-5xl text-white my-12 sm:text-6xl">Scholarships</h1>
       {!loading ?
-      <div className="w-[97] m-auto sm:w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2">
+      <div className="w-[80%] m-auto sm:w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2">
         {scholarshipData.length !== 0 ? 
         <div>
           {scholarshipData.map((scholarshipData) => <ScholarshipDisplay scholarshipData={scholarshipData} key={scholarshipData.id} />)}

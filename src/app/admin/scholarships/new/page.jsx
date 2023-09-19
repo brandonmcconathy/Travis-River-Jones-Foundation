@@ -38,36 +38,36 @@ export default function NewScholarship() {
   }
 
   return(
-    <div className="bg-amber-100 p-10">
-      <h1 className="text-lg font-bold mb-6">Add new scholarship:</h1>
-      <div className="flex justify-around">
-        <form autoComplete='off' onSubmit={handleSubmit} className="flex flex-col items-left w-1/2">
-          <div className="mb-10 flex justify-between items-center">
-            <label htmlFor="title" className="font-bold text-lg mr-10">Title:</label>
+    <div className="bg-amber-100 py-10 px-4">
+      <h1 className="font-bold text-2xl text-center mb-10">Add new scholarship</h1>
+      <div className="mx-auto sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 2xl:w-1/3">
+        <form autoComplete='off' onSubmit={handleSubmit} className="flex flex-col">
+          <div className="mb-10 flex flex-col">
+            <label htmlFor="title" className="font-bold text-lg">Title:</label>
             <input type="text" name='title' id='title' value={scholarshipData.title} onChange={handleChange} required 
-            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
+            className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
-          <div className="mb-10 flex justify-between">
-            <label htmlFor="description" className="font-bold text-lg mr-10">Description:</label>
-            <textarea rows='4' cols='50' name='description' id='description' value={scholarshipData.description} onChange={handleChange} required
-            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
+          <div className="mb-10 flex flex-col">
+            <label htmlFor="description" className="font-bold text-lg">Description:</label>
+            <textarea rows='4' name='description' id='description' value={scholarshipData.description} onChange={handleChange} required
+            className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
           </div>
-          <div className="mb-10 flex justify-between items-center">
-            <label htmlFor="timeExpired" className="font-bold text-lg mr-10">Expiration Time:</label>
+          <div className="mb-10 flex flex-col">
+            <label htmlFor="timeExpired" className="font-bold text-lg">Expiration Time:</label>
             <input type="datetime-local" name='timeExpired' id='timeExpired' value={scholarshipData.timeExpired} onChange={handleChange} required
-            className="outline-none rounded-xl px-4 py-2 w-3/4 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
+            className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
-          <div className="mb-14 flex justify-between">
-            <label className="font-bold text-lg mr-10">Choose Questions:</label>
-            <div className="w-3/4 flex justify-between flex-wrap gap-y-10">
+          <div className="mb-14 flex flex-col">
+            <label className="font-bold text-lg">Choose Questions:</label>
+            <div className="flex justify-between flex-wrap gap-y-10">
               {formQuestions.map((questions, index) => 
-              <button type="button" id={`questions${index}`} onClick={handleClick} title={index} key={index} className="flex flex-col bg-white px-6 py-4 rounded-xl shadow-xl width-48">
+              <button type="button" id={`questions${index}`} onClick={handleClick} title={index} key={index} className="flex flex-col flex-wrap bg-white px-5 py-4 rounded-xl shadow-xl transition duration-300">
                 {questions.map((question) => 
-                <h1 title={index} key={question} className="py-4 text-center w-full">{question}</h1>)}
+                <h1 title={index} key={question} className="py-3 text-center">{question}</h1>)}
               </button>)}
             </div>
           </div>
-          <button id='submit' disabled type="submit" className='font-bold text-amber-100 text-xl bg-cyan-900 rounded-xl px-8 py-2 self-center'>SUBMIT</button>
+          <button id='submit' disabled type="submit" className='font-bold text-amber-100 text-xl bg-cyan-900 rounded-xl px-8 py-2 self-center hover:bg-cyan-600 hover:text-amber-200 transition duration-300'>SUBMIT</button>
         </form>
       </div>
     </div>
