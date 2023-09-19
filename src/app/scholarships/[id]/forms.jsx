@@ -54,11 +54,11 @@ export function Form1({pageId}) {
   }
 
   return(
-    <div className='w-[97] bg-amber-100 font-semibold m-auto mt-10 py-5 px-4 rounded-2xl box-pop'>
+    <div className='w-[97] bg-amber-100 font-semibold m-auto my-10 py-5 px-4 rounded-2xl box-pop sm:w-5/6 md:my-12 md:px-8 lg:w-3/4 xl:my-20 xl:w-2/3'>
       <h1 className="text-center text-3xl font-bold mb-8">{scholarshipData.title}</h1>
       <div>
         <p className="text-lg text-center">Thank you for your interest in the Travis River Jones Foundation EMT reimbursement scholarship program. Please read through the scholarship rules before you apply.</p>
-        <ul className=" mx-4 list-disc flex flex-col gap-3 mt-8 mb-12">
+        <ul className=" mx-4 list-disc flex flex-col gap-3 mt-8 mb-12 md:mx-10 lg:mx-16">
           <li>You must  successfully complete an EMT program with American EMT Academy or Chaffey Community College within 180 days of receiving the scholarship. Please notify us of your course dates.</li>
           <div className="flex flex-col text-center bg-white mx-auto my-2 px-6 py-4 rounded-xl box-pop underline">
             <a href="https://www.americanemtacademy.com" target="_blank" className="hover:text-gray-400  transition duration-300">American EMT Academy</a>
@@ -75,17 +75,17 @@ export function Form1({pageId}) {
 
       <hr className="border-black my-8"></hr>
 
-      <form autoComplete='off' onSubmit={handleSubmit} className="flex flex-col">
-        <div className="mb-8 flex flex-col mx-2">
+      <form autoComplete='off' onSubmit={handleSubmit} className="flex flex-col sm:mx-4 md:mx-8 lg:mx-16 2xl:mx-48">
+        <div className="mb-8 flex flex-col mx-2 md:w-3/4 lg:w-2/3">
           <label className="font-bold text-lg">Name</label>
           <input type="text" name='name' value={formData.name} onChange={handleChange} required 
           className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
         </div>
-        <div className="mb-8 flex flex-col mx-2">
+        <div className="mb-8 flex flex-col mx-2 md:w-3/4 lg:w-2/3">
           <label className="font-bold text-lg">Email</label>
           <input type="email" name='email' value={formData.email} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
         </div>
-        <div className="mb-8 flex flex-col mx-2">
+        <div className="mb-8 flex flex-col mx-2 md:w-3/4 lg:w-2/3">
           <label className="font-bold text-lg">Best Contact Number</label>
           <input type="tel" name='number' value={formData.number} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
         </div>
@@ -105,7 +105,7 @@ export function Form1({pageId}) {
           <label className="font-bold text-lg leading-snug">Tell us about you last act of kindness or an incident where you helped someone when you didn't need to.</label>
           <textarea rows='4' cols='50' name='answer4' value={formData.answer4} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
         </div>
-        <div className="mb-10 mx-auto w-11/12 flex gap-4 items-center">
+        <div className="mb-10 mx-auto w-11/12 flex gap-4 items-center md:w-3/4">
           <input type="checkbox" onChange={checkChange} className="w-1/6"></input>
           <label className="font-bold text-sm">I acknowledge that I have read and agree to the rules and understand the requirements/process.</label>
         </div>
