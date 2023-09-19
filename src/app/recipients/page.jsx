@@ -28,8 +28,8 @@ export default function Recipients() {
   }, [])
 
   return(
-    <div>
-      <h1 className="text-center text-6xl text-white mt-16 mb-24">Recipients</h1>
+    <div className="mb-12">
+      <h1 className="text-center text-6xl text-white mt-12 mb-16">Recipients</h1>
       {!loading ?
       recipientData.length !== 0 ?
         recipientData.map((recipient) => <RecipientDisplay recipient={recipient} key={recipient.name} />) :
@@ -46,20 +46,22 @@ const RecipientDisplay = ({recipient}) => {
   return(
     <div>
       {recipient.image == '' ? 
-        <div className="m-auto bg-white mb-10 px-8 py-6 rounded-xl w-1/3 box-pop">
+        <div className="m-auto bg-white mb-8 px-4 py-4 rounded-xl w-[97] box-pop sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-5/12 2xl:w-1/3">
           <div className="flex flex-col items-center justify-center w-full">
             <h1 className="text-center text-2xl font-bold mb-3">{recipient.name}</h1>
-            <h1 className="text-center mb-1">{recipient.scholarship}</h1>
-            <h1 className="text-center mb-1">{recipient.school}</h1>
+            <h1 className="text-center mb-2">{recipient.scholarship}</h1>
+            <h1 className="text-center">{recipient.school}</h1>
             <h1 className="text-center">{recipient.year}</h1>
           </div>
         </div> :
-        <div className="flex m-auto bg-white mb-10 px-8 py-6 rounded-xl w-1/3 box-pop">
-          <img src={recipient.image} className="w-1/3 rounded-xl box-pop"></img>
+        <div className="flex gap-4 m-auto bg-white mb-8 px-4 py-4 rounded-xl w-[97] box-pop sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-5/12 2xl:w-1/3">
+          <div className="w-1/3 flex justify-center items-center">
+            <img src={recipient.image} className="rounded-xl box-pop"></img>
+          </div>
           <div className="flex flex-col items-center justify-center w-2/3">
-            <h1 className="text-center text-2xl font-bold mb-3">{recipient.name}</h1>
-            <h1 className="text-center mb-1">{recipient.scholarship}</h1>
-            <h1 className="text-center mb-1">{recipient.school}</h1>
+            <h1 className="text-center text-2xl font-bold mb-3 sm:text-2xl">{recipient.name}</h1>
+            <h1 className="text-center mb-2">{recipient.scholarship}</h1>
+            <h1 className="text-center">{recipient.school}</h1>
             <h1 className="text-center">{recipient.year}</h1>
           </div>
         </div>}
