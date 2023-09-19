@@ -54,11 +54,11 @@ export function Form1({pageId}) {
   }
 
   return(
-    <div className='w-3/4 bg-amber-100 font-semibold m-auto mt-10 py-10 px-10 rounded-2xl box-pop'>
-      <h1 className="text-center text-3xl font-bold mb-10">{scholarshipData.title}</h1>
+    <div className='w-[97] bg-amber-100 font-semibold m-auto mt-10 py-5 px-4 rounded-2xl box-pop'>
+      <h1 className="text-center text-3xl font-bold mb-8">{scholarshipData.title}</h1>
       <div>
-        <p className="text-xl text-center mb-8">Thank you for your interest in the Travis River Jones Foundation EMT reimbursement scholarship program. Please read through the scholarship rules before you apply.</p>
-        <ul className="mx-16 text-lg list-disc flex flex-col gap-3 my-6">
+        <p className="text-lg text-center">Thank you for your interest in the Travis River Jones Foundation EMT reimbursement scholarship program. Please read through the scholarship rules before you apply.</p>
+        <ul className=" mx-4 list-disc flex flex-col gap-3 mt-8 mb-12">
           <li>You must  successfully complete an EMT program with American EMT Academy or Chaffey Community College within 180 days of receiving the scholarship. Please notify us of your course dates.</li>
           <div className="flex flex-col text-center bg-white mx-auto my-2 px-6 py-4 rounded-xl box-pop underline">
             <a href="https://www.americanemtacademy.com" target="_blank" className="hover:text-gray-400  transition duration-300">American EMT Academy</a>
@@ -69,28 +69,29 @@ export function Form1({pageId}) {
           <li>Current applications are being accepted through <Deadline timeExpired={scholarshipData.timeExpired}/>.</li>
           <li>Successful recipient(s) of the TRJ Foundation scholarship will be notified via email and one phone attempt by <AfterDeadline timeExpired={scholarshipData.timeExpired}/> and will have 72 hours to respond.</li>
         </ul>
-        <p className="text-center">Please contact Heather or Michael Jones with any questions at travisriverjonesfoundation@gmail.com</p>
+        <p className="text-center mb-4">Please contact Heather or Michael Jones with any questions at travisriverjonesfoundation@gmail.com</p>
         <p className="text-center">Please only apply if you have read, understand and agree to all rules and are ready to begin an EMT program.</p>
       </div>
+
       <hr className="border-black my-8"></hr>
 
-      <form autoComplete='off' onSubmit={handleSubmit} className="px-32 flex flex-col">
-        <div className="mb-8 flex flex-col mx-auto w-3/4">
-          <label className="font-bold text-lg mr-10 self-start">Name</label>
+      <form autoComplete='off' onSubmit={handleSubmit} className="flex flex-col">
+        <div className="mb-8 flex flex-col mx-2">
+          <label className="font-bold text-lg">Name</label>
           <input type="text" name='name' value={formData.name} onChange={handleChange} required 
-          className="outline-none rounded-xl px-4 py-2 w-2/3 shadow-xl self-start focus:ring focus:ring-gray-300 transition duration-300"></input>
+          className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
         </div>
-        <div className="mb-10 flex flex-col mx-auto w-3/4">
-          <label className="font-bold text-lg mr-10 self-start">Email</label>
-          <input type="email" name='email' value={formData.email} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 w-2/3 shadow-xl self-start focus:ring focus:ring-gray-300 transition duration-300"></input>
+        <div className="mb-8 flex flex-col mx-2">
+          <label className="font-bold text-lg">Email</label>
+          <input type="email" name='email' value={formData.email} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
         </div>
-        <div className="mb-10 flex flex-col mx-auto w-3/4">
-          <label className="font-bold text-lg mr-10 self-start">Best Contact Number</label>
-          <input type="tel" name='number' value={formData.number} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 w-2/3 shadow-xl self-start focus:ring focus:ring-gray-300 transition duration-300"></input>
+        <div className="mb-8 flex flex-col mx-2">
+          <label className="font-bold text-lg">Best Contact Number</label>
+          <input type="tel" name='number' value={formData.number} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
         </div>
-        <div className="mb-10 flex flex-col mx-auto w-3/4">
-          <label className="font-bold text-lg mr-10 self-start">How did you hear about this scholarship?</label>
-          <input type="text" name='answer1' value={formData.answer1} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 w-full shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
+        <div className="mb-8 flex flex-col mx-2">
+          <label className="font-bold text-lg leading-snug">How did you hear about this scholarship?</label>
+          <input type="text" name='answer1' value={formData.answer1} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
         </div>
         <div className="mb-10 flex flex-col mx-auto w-3/4">
           <label className="font-bold text-lg mr-10 self-start">Why do you want to be an EMT?</label>
