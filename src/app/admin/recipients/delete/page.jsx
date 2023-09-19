@@ -28,8 +28,8 @@ export default function DeleteRecipient() {
   }, [])
 
   return(
-    <div className="bg-amber-100 py-5 px-10">
-      <h1 className="font-bold text-xl mb-10">Choose a recipient to delete:</h1>
+    <div className="bg-amber-100 py-10 px-2">
+      <h1 className="font-bold text-2xl text-center mb-10">Delete Recipients</h1>
       {recipientData.length !== 0 ? 
         recipientData.map((recipient) => <RecipientDisplay recipient={recipient} key={recipient.id} />) : 
         <div>
@@ -61,19 +61,34 @@ const RecipientDisplay = ({recipient}) => {
   }
 
   return(
-    <div className="flex m-auto bg-white mb-10 px-8 py-6 rounded-xl w-5/12 box-pop">
+    <div>
       {image == '' ? 
-        <img src="/noimg.jpg" className="w-1/3"></img> :
-        <img src={image} className="w-1/3 rounded-3xl box-pop"></img>}
-      <div className="flex flex-col items-center justify-center w-2/3">
-        <h1 className="text-center text-2xl font-bold mb-3">{name}</h1>
-        <h1 className="text-center mb-1">{scholarship}</h1>
-        <h1 className="text-center mb-1">{school}</h1>
-        <h1 className="text-center">{year}</h1>
-        {!showDelete ? 
-          <button onClick={changeDelete} id='confirm' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">DELETE</button> : 
-          <button onClick={handleClick} id='delete' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">ARE YOU SURE?</button>}  
-      </div>
+        <div className="m-auto bg-white mb-8 px-4 py-4 rounded-xl w-[97] box-pop sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-5/12 2xl:w-1/3">
+          <div className="flex flex-col items-center justify-center w-full">
+            <h1 className="text-center text-2xl font-bold mb-3">{name}</h1>
+            <h1 className="text-center mb-2">{scholarship}</h1>
+            <h1 className="text-center">{school}</h1>
+            <h1 className="text-center mb-2">{year}</h1>
+            {!showDelete ? 
+            <button onClick={changeDelete} id='confirm' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">DELETE</button> : 
+            <button onClick={handleClick} id='delete' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">ARE YOU SURE?</button>}
+          </div>
+        </div> :
+        <div className="flex gap-4 m-auto bg-white mb-8 px-4 py-4 rounded-xl w-[97] box-pop sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-5/12 2xl:w-1/3">
+          <div className="w-1/3 flex justify-center items-center">
+            <img src={image} className="rounded-xl box-pop"></img>
+          </div>
+          <div className="flex flex-col items-center justify-center w-2/3">
+            <h1 className="text-center text-2xl font-bold mb-3 sm:text-2xl">{name}</h1>
+            <h1 className="text-center mb-2">{scholarship}</h1>
+            <h1 className="text-center">{school}</h1>
+            <h1 className="text-center mb-2">{year}</h1>
+            {!showDelete ? 
+            <button onClick={changeDelete} id='confirm' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">DELETE</button> : 
+            <button onClick={handleClick} id='delete' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">ARE YOU SURE?</button>}
+          </div>
+        </div>}
     </div>
   )
 }
+
