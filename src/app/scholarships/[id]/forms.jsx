@@ -13,7 +13,7 @@ export function Form1({pageId}) {
     name: '', email: '', number: '', answer1: '', answer2: '', answer3: '', answer4: ''
   })
   const [scholarshipData, setScholarshipData] = useState({})
-  const [submitted, setSubmitted] = useState(true)
+  const [submitted, setSubmitted] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
