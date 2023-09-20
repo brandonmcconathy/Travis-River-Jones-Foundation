@@ -13,9 +13,9 @@ export default function RootLayout({ children }) {
       <body className={lora.className}>
         <Providers>
           <Navbar />
-          <div className='m-4'>
+          <main className='m-4'>
             {children}
-          </div>
+          </main>
         </Providers>
       </body>
     </html>

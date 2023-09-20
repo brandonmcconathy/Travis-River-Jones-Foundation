@@ -87,7 +87,7 @@ export function Form1({pageId}) {
     return(
       <div className='w-[97] bg-amber-100 font-semibold m-auto my-10 py-5 px-4 rounded-2xl box-pop sm:w-5/6 md:my-12 md:px-8 lg:w-3/4 xl:my-20 xl:w-2/3'>
         <h1 className="text-center text-3xl font-bold mb-8">{scholarshipData.title}</h1>
-        <div>
+        <section>
           <p className="text-lg text-center">Thank you for your interest in the Travis River Jones Foundation EMT reimbursement scholarship program. Please read through the scholarship rules before you apply.</p>
           <ul className=" mx-4 list-disc flex flex-col gap-3 mt-8 mb-12 md:mx-10 lg:mx-16">
             <li>You must  successfully complete an EMT program with American EMT Academy or Chaffey Community College within 180 days of receiving the scholarship. Please notify us of your course dates.</li>
@@ -102,7 +102,7 @@ export function Form1({pageId}) {
           </ul>
           <p className="text-center mb-4">Please contact Heather or Michael Jones with any questions at travisriverjonesfoundation@gmail.com</p>
           <p className="text-center">Please only apply if you have read, understand and agree to all rules and are ready to begin an EMT program.</p>
-        </div>
+        </section>
   
         <hr className="border-black my-8"></hr>
   

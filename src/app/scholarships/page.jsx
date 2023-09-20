@@ -54,9 +54,9 @@ export default function Scholarships() {
       {!loading ?
       <div className="w-[80%] m-auto sm:w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2">
         {scholarshipData.length !== 0 ? 
-        <div>
+        <section>
           {scholarshipData.map((scholarshipData) => <ScholarshipDisplay scholarshipData={scholarshipData} key={scholarshipData.id} />)}
-        </div> : 
+        </section> : 
           <div className="text-center mt-32">
             <h1 className="text-amber-100 font-bold text-2xl mb-1">There are currently no active scholarships</h1>
             <h2 className="text-gray-300 text-lg">Please check back later</h2>
