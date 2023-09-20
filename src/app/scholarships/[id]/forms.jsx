@@ -79,7 +79,7 @@ export function Form1({pageId}) {
         </div>
         <div className="mx-auto flex gap-8 mt-10">
           <button onClick={handleSubmit} className="mx-auto bg-red-800 px-4 py-2 rounded-xl font-semibold text-white box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">SUBMIT</button>
-          <button onClick={handleReturn} className="mx-auto bg-red-800 px-4 py-2 rounded-xl font-semibold text-white box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">GO BACK</button>
+          <button onClick={handleReturn} className="mx-auto bg-red-800 px-4 py-2 rounded-xl font-semibold text-white box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">BACK</button>
         </div>
       </div>
     )
