@@ -49,17 +49,19 @@ export default function AdminNavbar() {
         </h1>
         <ul className="flex gap-8 text-lg">
           {navbarItems.map((item) => <NavbarItem item={item} key={item} />)}
+          <li><SignOut /></li>
         </ul>
       </nav>
       <nav className="bg-cyan-900 h-12 flex items-center justify-between px-5 text-white lg:hidden">
         <GiHamburgerMenu onClick={handleClick} style={{fontSize: '1.4rem'}} />
         <Link href="/admin" className="text-xl font-bold">Admin</Link>
-        <h1 className="invisible"></h1>
+        <SignOut />
         <div id='admin-nav-menu' className="fixed z-10 top-0 left-0 h-full w-0 bg-red-theme text-white flex flex-col duration-500 overflow-x-hidden">
           <AiOutlineClose onClick={handleClick} style={{color: 'white', fontSize: '1.6rem', alignSelf: 'end', marginRight: '1rem', marginTop: '1rem'}} />
           <h1 className="text-center text-3xl mt-6">Admin</h1>
           <ul className="flex flex-col just-center items-center text-xl text-center mt-12">
             {navMenuItems.map((item, index) => <NavMenuDisplay item={item} handleClick={handleClick} key={index}/>)}
+            <li><SignOut /></li>
           </ul>
         </div>
       </nav>
