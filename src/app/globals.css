@@ -50,21 +50,17 @@ html {
 
 .section-grow:hover {
   z-index: 2;
-  animation: sectionGrowAnimation ease 2s;
+  animation: sectionGrowAnimation ease 1s;
   animation-fill-mode: forwards;
 }
 @keyframes sectionGrowAnimation {
   0% {
-    margin: 3rem 0;
-    padding: 3rem 2.5rem;
-  }
-  50% {
-    margin: 0;
-    padding: 4.5rem 2.5rem;
+    padding: 3rem 0;
+    top: 1.25rem;
   }
   100% {
-    margin: -3rem 0;
-    padding: 6rem 2.5rem;
+    padding: 6rem 0;
+    top: 0;
   }
 }
 

@@ -42,20 +42,22 @@ export default function Homepage() {
             <AiOutlineDown />
           </div> 
         </section>
-        <Link href="/about">
-          <section id='top-div' className="bg-amber-100 py-12 px-10 text-center relative my-12 learn-more hover:bg-amber-50 transition duration-1000 section-grow">
-            <h1 className="text-3xl font-semibold mb-2">Our Mission</h1>
-            <p className="text-xl mb-12">Empower positive change by promoting kindness, goodwill, and enriching the lives of others through our Kindness and EMT Scholarships.</p>
-            <h2 className="opacity-0 -mb-16 font-semibold text-cyan-800 transition duration-1000">Learn more about us</h2>
-          </section>
-        </Link>
-        <Link href="/scholarships">
-          <section id='top-div' className="bg-amber-100 py-12 px-10 text-center relative my-12 learn-more hover:bg-amber-50 transition duration-1000 section-grow">
-            <h1 className="text-3xl font-semibold mb-2">Scholarships</h1>
-            <p className="text-xl mb-12">We give out scholarships such as EMT scholarships for EMT school and also kindness scholarships for high school students.</p>
-            <h2 className="opacity-0 -mb-16 font-semibold text-cyan-800 transition duration-1000">Check out our scholarships</h2>
-          </section>
-        </Link>
+        <div className="relative w-screen h-screen bg-black">
+          <Link href="/about" className="absolute top-5 left-0 right-0 section-grow">
+            <section id='top-div' className="bg-amber-100 py-12 px-10 text-center learn-more hover:bg-amber-50 transition duration-1000">
+              <h1 className="text-3xl font-semibold mb-2">Our Mission</h1>
+              <p className="text-xl mb-12">Empower positive change by promoting kindness, goodwill, and enriching the lives of others through our Kindness and EMT Scholarships.</p>
+              <h2 className="opacity-0 -mb-16 font-semibold text-cyan-800 transition duration-1000">Learn more about us</h2>
+            </section>
+          </Link>
+          <Link href="/scholarships" className="absolute top-64 left-0 right-0 section-grow">
+            <section id='top-div' className="bg-amber-100 py-12 px-10 text-center learn-more hover:bg-amber-50 transition duration-1000">
+              <h1 className="text-3xl font-semibold mb-2">Scholarships</h1>
+              <p className="text-xl mb-12">We offer scholarships such as EMT scholarships for EMT school and kindness scholarships for high school students.</p>
+              <h2 className="opacity-0 -mb-16 font-semibold text-cyan-800 transition duration-1000">View our scholarships</h2>
+            </section>
+          </Link>
+        </div>
         <h1 className="mb-96">Test</h1>
         <h1 className="mb-96">Test</h1>
         <h1 className="mb-96">Test</h1>
