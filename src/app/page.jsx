@@ -43,10 +43,10 @@ export default function Homepage() {
           </div> 
         </section>
         <Link href="/about">
-          <section id='top-div' className="bg-amber-100 py-6 px-10 text-center relative my-6 learn-more hover:bg-amber-50 transition duration-1000">
-            <h1 className="text-3xl font-semibold mb-3">Our Mission</h1>
-            <p className="text-xl mb-4">Empower positive change by promoting kindness, goodwill, and enriching the lives of others through our Kindness and EMT Scholarships.</p>
-            <h2 className="font-semibold text-cyan-800 transition duration-1000">Learn more about us</h2>
+          <section id='top-div' className="bg-amber-100 py-12 px-10 text-center relative my-12 learn-more hover:bg-amber-50 transition duration-1000 section-grow">
+            <h1 className="text-3xl font-semibold mb-2">Our Mission</h1>
+            <p className="text-xl mb-12">Empower positive change by promoting kindness, goodwill, and enriching the lives of others through our Kindness and EMT Scholarships.</p>
+            <h2 className="opacity-0 -mb-16 font-semibold text-cyan-800 transition duration-1000">Learn more about us</h2>
           </section>
         </Link>
         <h1 className="mb-96">Test</h1>
