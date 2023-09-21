@@ -49,6 +49,13 @@ export default function Homepage() {
             <h2 className="opacity-0 -mb-16 font-semibold text-cyan-800 transition duration-1000">Learn more about us</h2>
           </section>
         </Link>
+        <Link href="/scholarships">
+          <section id='top-div' className="bg-amber-100 py-12 px-10 text-center relative my-12 learn-more hover:bg-amber-50 transition duration-1000 section-grow">
+            <h1 className="text-3xl font-semibold mb-2">Scholarships</h1>
+            <p className="text-xl mb-12">We give out scholarships such as EMT scholarships for EMT school and also kindness scholarships for high school students.</p>
+            <h2 className="opacity-0 -mb-16 font-semibold text-cyan-800 transition duration-1000">Check out our scholarships</h2>
+          </section>
+        </Link>
         <h1 className="mb-96">Test</h1>
         <h1 className="mb-96">Test</h1>
         <h1 className="mb-96">Test</h1>

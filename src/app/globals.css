@@ -58,6 +58,10 @@ html {
     margin: 3rem 0;
     padding: 3rem 2.5rem;
   }
+  50% {
+    margin: 0;
+    padding: 4.5rem 2.5rem;
+  }
   100% {
     margin: -3rem 0;
     padding: 6rem 2.5rem;
