@@ -46,8 +46,22 @@ html {
   color: rgb(165 243 252)
 }
 
+.img-fade-in {
+  animation: imgFadeInAnimation ease 2s
+}
+@keyframes imgFadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .fade-in {
-  animation: fadeInAnimation ease 5s;
+  animation: fadeInAnimation ease 4s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
 @keyframes fadeInAnimation {
   0% {
@@ -61,7 +75,7 @@ html {
 .bounce {
   animation: bounceAnimation linear 1.3s;
   animation-iteration-count: infinite;
-  animation-delay: 3s;
+  animation-delay: 6s;
 }
 @keyframes bounceAnimation {
   0% {

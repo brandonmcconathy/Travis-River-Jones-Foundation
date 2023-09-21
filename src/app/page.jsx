@@ -35,8 +35,8 @@ export default function Homepage() {
   return (
       <div className="-m-4">
         <section className="homepage-img relative select-none text-white">
-          <Image src='/assets/test-hero-img.jpg' alt="hero image" fill priority></Image>
-          <h1 className="text-5xl absolute top-1/4 left-1/2 homepage-img-text fade-in font-semibold">Travis River Jones Foundation</h1>
+          <Image src='/assets/test-hero-img.jpg' alt="hero image" fill priority className="img-fade-in"></Image>
+          <h1 className="opacity-0 text-5xl absolute top-1/4 left-1/2 homepage-img-text fade-in font-semibold">Travis River Jones Foundation</h1>
           <div onClick={handleScroll} className="absolute left-1/2 text-2xl flex flex-col items-center homepage-img-text bounce font-semibold opacity-0">
             <p>See more</p>
             <AiOutlineDown />
