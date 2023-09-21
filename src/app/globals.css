@@ -34,11 +34,16 @@ html {
 /* Homepage styles */
 
 .homepage-img {
-  height: 75vh;
+  height: 92vh;
 }
 
 .homepage-img-text {
   transform: translate(-50%, -50%);
+  text-shadow: black 0 0 1px;
+}
+
+.learn-more:hover h2 {
+  color: rgb(165 243 252)
 }
 
 .fade-in {
@@ -56,18 +61,19 @@ html {
 .bounce {
   animation: bounceAnimation linear 1.3s;
   animation-iteration-count: infinite;
+  animation-delay: 3s;
 }
 @keyframes bounceAnimation {
   0% {
-    margin-bottom: 0;
-    opacity: 1;
-  }
-  50% {
-    margin-bottom: .5rem;
+    bottom: -1rem;
     opacity: .5;
   }
-  100% {
-    margin-bottom: 0;
+  50% {
+    bottom: -1.5rem;
     opacity: 1;
+  }
+  100% {
+    bottom: -1rem;
+    opacity: .5;
   }
 }
