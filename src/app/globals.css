@@ -27,34 +27,47 @@ html {
   background-color: rgb(73 44 44 / var(--tw-bg-opacity));
 }
 
-.width-48 {
-  width: 48%;
-}
-
-.bg-blue {
-  background-color: #335c67;
-}
-
-.text-blue {
-  color: #335c67;
-}
-
-.bg-cream {
-  background-color: #fff3b0;
-}
-.text-cream {
-  color: #fff3b0;
-  text-shadow: black 0px 0px 4px;
-}
-
-.text-orange {
-  color: #e09f3e;
-}
-
-.bg-orange {
-  background-color: #e09f3e;
-}
-
 .box-pop {
   box-shadow: 0 3px 10px rgb(0,0,0,0.2);
+}
+
+/* Homepage styles */
+
+.homepage-img {
+  height: 75vh;
+}
+
+.homepage-img-text {
+  transform: translate(-50%, -50%);
+}
+
+.fade-in {
+  animation: fadeInAnimation ease 5s;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bounce {
+  animation: bounceAnimation linear 1.3s;
+  animation-iteration-count: infinite;
+}
+@keyframes bounceAnimation {
+  0% {
+    margin-bottom: 0;
+    opacity: 1;
+  }
+  50% {
+    margin-bottom: .5rem;
+    opacity: .5;
+  }
+  100% {
+    margin-bottom: 0;
+    opacity: 1;
+  }
 }
