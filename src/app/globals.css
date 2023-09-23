@@ -42,23 +42,41 @@ html {
   text-shadow: black 0 0 1px;
 }
 
-.learn-more:hover h2 {
-  color: rgb(165 243 252);
-  animation: imgFadeInAnimation ease 1s;
-  animation-fill-mode: forwards;
+.section-transition {
+  transition-property: all;
+  transition-duration: 1s;
 }
 
-.section-grow:hover {
-  z-index: 2;
-  animation: sectionGrowAnimation ease 1s;
+.learn-more:hover h2 {
+  opacity: 1;
+  animation: fadeInOutAnimation linear 2s;
   animation-fill-mode: forwards;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
 }
-@keyframes sectionGrowAnimation {
+@keyframes fadeInOutAnimation {
   0% {
-    padding: 3rem 0;
+    opacity: 1;
+  }
+  50% {
+    opacity: .2;
   }
   100% {
-    padding: 6rem 0;
+    opacity: 1;
+  }
+}
+
+.move-across-screen {
+  left: 0%;
+  animation: acrossScreenAnimation linear 20s;
+  animation-iteration-count: infinite;
+}
+@keyframes acrossScreenAnimation {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
   }
 }
 
@@ -107,3 +125,4 @@ html {
     opacity: .5;
   }
 }
+
