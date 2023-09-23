@@ -61,9 +61,9 @@ export default function NewScholarship() {
             <label className="font-bold text-lg">Choose Questions:</label>
             <div className="flex justify-between flex-wrap gap-y-10">
               {formQuestions.map((questions, index) => 
-              <button type="button" id={`questions${index}`} onClick={handleClick} title={index} key={index} className="flex flex-col flex-wrap bg-white px-5 py-4 rounded-xl shadow-xl transition duration-300">
+              <button type="button" id={`questions${index}`} onClick={handleClick} title={index} key={index} className="flex flex-col flex-wrap bg-white px-5 py-4 rounded-xl shadow-xl transition duration-300 items-center">
                 {questions.map((question) => 
-                <h1 title={index} key={question} className="py-3 text-center">{question}</h1>)}
+                <h1 title={index} key={question} className="py-3">{question}</h1>)}
               </button>)}
             </div>
           </div>
