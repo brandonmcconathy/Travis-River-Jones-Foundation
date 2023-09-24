@@ -3,10 +3,21 @@ import Link from "next/link"
 import SeeMore from "./components/seemore"
 
 export default function Homepage() {
+
+  // let image = 0
+  // let nextImage = 1
+
+  // setInterval(() => {
+  //   document.getElementById(`homepage-${image}`).classList.add('move-across-screen')
+  //   document.getElementById(`homepage-${nextImage}`).classList.remove('move-across-screen')
+  //   image = (image + 1) % 8
+  //   nextImage = (image + 1) % 8
+  // }, 2000)
+
   return (
       <div className="-m-4">
         <section className="homepage-img relative select-none text-white">
-          <Image src='/assets/test-hero-img.jpg' alt="hero image" fill priority className="img-fade-in"></Image>
+          <Image src='/assets/test-hero-img.jpg' alt="hero image" fill priority className="img-fade-in" />
           <h1 className="opacity-0 text-5xl absolute top-1/4 left-1/2 homepage-img-text fade-in font-semibold">Travis River Jones Foundation</h1>
           <SeeMore />
         </section>
@@ -33,8 +44,17 @@ export default function Homepage() {
             </section>
           </Link>
         </div>
-        <section className="text-center mt-10">
-          <img src="/assets/test-hero-img.jpg" className="w-32"></img>
+        <section className="mt-10">
+          <div className="flex gap-10">
+            <Image id='homepage-0' src='/assets/homepage-0.jpg' alt={`homepage photo 0`} width={200} height={200} className="" />
+            <Image id='homepage-1' src='/assets/homepage-1.jpg' alt={`homepage photo 1`} width={200} height={200} className="" />
+            <Image id='homepage-2' src='/assets/homepage-2.jpg' alt={`homepage photo 2`} width={200} height={200} className="" />
+            <Image id='homepage-3' src='/assets/homepage-3.jpg' alt={`homepage photo 3`} width={200} height={200} className="" />
+            <Image id='homepage-4' src='/assets/homepage-4.jpg' alt={`homepage photo 4`} width={200} height={200} className="" />
+            <Image id='homepage-5' src='/assets/homepage-5.jpg' alt={`homepage photo 5`} width={200} height={200} className="" />
+            <Image id='homepage-6' src='/assets/homepage-6.jpg' alt={`homepage photo 6`} width={200} height={200} className="" />
+            <Image id='homepage-7' src='/assets/homepage-7.jpg' alt={`homepage photo 7`} width={200} height={200} className="" />
+          </div>
         </section>
         <hr className="my-10"></hr>
         <footer className="text-center text-lg text-white flex flex-col items-center mb-32 md:text-2xl">

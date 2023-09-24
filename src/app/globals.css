@@ -69,7 +69,7 @@ html {
 .move-across-screen {
   left: 0%;
   animation: acrossScreenAnimation linear 20s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
 }
 @keyframes acrossScreenAnimation {
   0% {
