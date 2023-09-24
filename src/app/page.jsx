@@ -37,7 +37,7 @@ export default function Homepage() {
           <img src="/assets/test-hero-img.jpg" className="w-32"></img>
         </section>
         <hr className="my-10"></hr>
-        <footer className="text-center text-lg text-white flex flex-col items-center mb-64 md:text-2xl">
+        <footer className="text-center text-lg text-white flex flex-col items-center mb-32 md:text-2xl">
           <Link href='/contact' className="hover:text-gray-400 transition duration-500 py-3 px-5 md:border-b">Feel free to contact us with any questions you may have.</Link>
           <Link href='/donate' className="hover:text-gray-400 transition duration-500 py-3 px-5">Please consider donating to help fund future scholarships.</Link>
         </footer>
