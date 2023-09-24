@@ -9,7 +9,7 @@ export default function SeeMore() {
   }
   
   return(
-    <div onClick={handleScroll} className="absolute left-1/2 text-2xl flex flex-col items-center homepage-img-text bounce font-semibold opacity-0">
+    <div onClick={handleScroll} className="absolute left-1/2 bottom-2 text-2xl flex flex-col items-center homepage-img-text bounce font-semibold opacity-0">
       <p>See more</p>
       <AiOutlineDown />
     </div> 

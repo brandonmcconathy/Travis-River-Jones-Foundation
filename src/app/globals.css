@@ -113,15 +113,15 @@ html {
 }
 @keyframes bounceAnimation {
   0% {
-    bottom: -1rem;
+    bottom: .5rem;
     opacity: .5;
   }
   50% {
-    bottom: -1.5rem;
+    bottom: 0;
     opacity: 1;
   }
   100% {
-    bottom: -1rem;
+    bottom: .5rem;
     opacity: .5;
   }
 }
