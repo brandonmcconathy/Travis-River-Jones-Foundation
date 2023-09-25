@@ -3,35 +3,27 @@
 import Image from "next/image"
 import Link from "next/link"
 import SeeMore from "./components/seemore"
-import { useRef, useState } from "react"
+import { useState, useEffect } from "react"
 
 
 export default function Homepage() {
 
   const [image, setImage] = useState(0)
-  const [nextImage, setNextImage] = useState(1)
-  const interval = useRef()
 
-  const newInterval = () => {
-    if (!interval.current) {
-      interval.current = setInterval(() => {
-        document.getElementById(`homepage-${image}`).style.display = 'none'
-        document.getElementById(`homepage-${nextImage}`).style.display = 'block'
-        document.getElementById(`homepage-${image}`).classList.remove('img-fade-in')
-        document.getElementById(`homepage-${nextImage}`).classList.add('img-fade-in')
-    
-        setImage(curImage => {
-          const nextImage = curImage + 1
-          return nextImage % 8
-        })
-        setNextImage(curImage => {
-          const nextImage = curImage + 1
-          return nextImage % 8
-        })
-      }, 5000)
-    }
-  }
-  newInterval()
+  useEffect(() => {
+    const interval = setInterval(() => {
+      let nextImage = (image + 1) % 8
+      document.getElementById(`homepage-${image}`).style.display = 'none'
+      document.getElementById(`homepage-${nextImage}`).style.display = 'block'
+      document.getElementById(`homepage-${image}`).classList.remove('img-fade-in')
+      document.getElementById(`homepage-${nextImage}`).classList.add('img-fade-in')
+      
+      setImage((image) => {
+        return (image + 1) % 8
+      })
+    }, 5000)
+    return () => clearInterval(interval)
+  },[image])
 
   return (
       <div className="-m-4">
