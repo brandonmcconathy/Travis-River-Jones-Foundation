@@ -85,7 +85,7 @@ html {
 }
 
 .img-fade-in {
-  animation: imgFadeInAnimation ease 2s
+  animation: imgFadeInAnimation ease-out 1.2s
 }
 @keyframes imgFadeInAnimation {
   0% {
@@ -93,18 +93,6 @@ html {
   }
   100% {
     opacity: 1;
-  }
-}
-
-.img-fade-out {
-  animation: imgFadeOutAnimation ease 2s
-}
-@keyframes imgFadeOutAnimation {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 
