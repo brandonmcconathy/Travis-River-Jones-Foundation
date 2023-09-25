@@ -38,7 +38,7 @@ export default function Homepage() {
       <div className="-m-4">
         <section className="homepage-img relative select-none text-white">
           <Image src='/assets/test-hero-img.jpg' alt="hero image" fill priority className="img-fade-in" />
-          <h1 className="opacity-0 text-5xl absolute top-1/4 left-1/2 homepage-img-text fade-in font-semibold">Travis River Jones Foundation</h1>
+          <h1 className="opacity-0 text-5xl text-center absolute top-1/4 left-1/2 homepage-img-text fade-in font-semibold">Travis River Jones Foundation</h1>
           <SeeMore />
         </section>
         <div className="flex flex-col my-5 gap-5">

@@ -52,7 +52,7 @@ export default function Navbar() {
       </nav>
       <nav className="bg-amber-100 h-12 flex items-center justify-between px-5 lg:hidden">
         <GiHamburgerMenu onClick={handleClick} style={{fontSize: '1.4rem'}} />
-        <Link href="/" className="text-xl font-bold">Travis River Jones Foundation</Link>
+        <Link href="/" className="text-xl font-bold text-center">Travis River Jones Foundation</Link>
         <h1 className="invisible"></h1>
         <div id='nav-menu' className="fixed z-10 top-0 left-0 h-full w-0 bg-red-theme text-white flex flex-col duration-500 overflow-x-hidden">
           <AiOutlineClose onClick={handleClick} style={{color: 'white', fontSize: '1.6rem', alignSelf: 'end', marginRight: '1rem', marginTop: '1rem'}} />
