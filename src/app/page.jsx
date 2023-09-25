@@ -13,24 +13,23 @@ export default function Homepage() {
   const interval = useRef()
 
   const newInterval = () => {
-    if (interval.current) {
-      clearInterval(interval.current)
-    } 
-    interval.current = setInterval(() => {
-      document.getElementById(`homepage-${image}`).style.display = 'none'
-      document.getElementById(`homepage-${nextImage}`).style.display = 'block'
-      document.getElementById(`homepage-${image}`).classList.remove('img-fade-in')
-      document.getElementById(`homepage-${nextImage}`).classList.add('img-fade-in')
-  
-      setImage(curImage => {
-        const nextImage = curImage + 1
-        return nextImage % 8
-      })
-      setNextImage(curImage => {
-        const nextImage = curImage + 1
-        return nextImage % 8
-      })
-    }, 5000)
+    if (!interval.current) {
+      interval.current = setInterval(() => {
+        document.getElementById(`homepage-${image}`).style.display = 'none'
+        document.getElementById(`homepage-${nextImage}`).style.display = 'block'
+        document.getElementById(`homepage-${image}`).classList.remove('img-fade-in')
+        document.getElementById(`homepage-${nextImage}`).classList.add('img-fade-in')
+    
+        setImage(curImage => {
+          const nextImage = curImage + 1
+          return nextImage % 8
+        })
+        setNextImage(curImage => {
+          const nextImage = curImage + 1
+          return nextImage % 8
+        })
+      }, 5000)
+    }
   }
   newInterval()
 
@@ -66,7 +65,7 @@ export default function Homepage() {
         </div>
         <section className="mt-10">
           <div className="relative flex justify-center items-center picture-height w-auto mx-2">
-            <Image id="homepage-0" src={'/assets/homepage-0.jpg'} alt={'homepage-0'} width={333} height={500} className="rounded-xl box-pop" />
+            <Image id="homepage-0" src={'/assets/homepage-0.jpg'} alt={'homepage-0'} width={333} height={500} className="hidden rounded-xl box-pop" />
             <Image id="homepage-1" src={'/assets/homepage-1.jpg'} alt={'homepage-1'} width={750} height={500} className="hidden rounded-xl box-pop" />
             <Image id="homepage-2" src={'/assets/homepage-2.jpg'} alt={'homepage-2'} width={333} height={500} className="hidden rounded-xl box-pop" />
             <Image id="homepage-3" src={'/assets/homepage-3.jpg'} alt={'homepage-3'} width={750} height={500} className="hidden rounded-xl box-pop" />
