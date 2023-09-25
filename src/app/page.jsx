@@ -1,18 +1,31 @@
+'use client'
+
 import Image from "next/image"
 import Link from "next/link"
 import SeeMore from "./components/seemore"
+import { images } from "./images"
+import { useRef, useState } from "react"
+
 
 export default function Homepage() {
 
-  // let image = 0
-  // let nextImage = 1
+  const [image, setImage] = useState(0)
+  const interval = useRef()
 
-  // setInterval(() => {
-  //   document.getElementById(`homepage-${image}`).classList.add('move-across-screen')
-  //   document.getElementById(`homepage-${nextImage}`).classList.remove('move-across-screen')
-  //   image = (image + 1) % 8
-  //   nextImage = (image + 1) % 8
-  // }, 2000)
+  const newInterval = () => {
+    if (interval.current) {
+      clearInterval(interval.current)
+    } 
+    interval.current = setInterval(() => {
+      console.log(image)
+  
+      setImage(curImage => {
+        let nextImage = curImage + 1
+        return nextImage % 8
+      })
+    }, 4000)
+  }
+  newInterval()
 
   return (
       <div className="-m-4">
@@ -45,15 +58,8 @@ export default function Homepage() {
           </Link>
         </div>
         <section className="mt-10">
-          <div className="flex gap-10">
-            <Image id='homepage-0' src='/assets/homepage-0.jpg' alt={`homepage photo 0`} width={200} height={200} className="" />
-            <Image id='homepage-1' src='/assets/homepage-1.jpg' alt={`homepage photo 1`} width={200} height={200} className="" />
-            <Image id='homepage-2' src='/assets/homepage-2.jpg' alt={`homepage photo 2`} width={200} height={200} className="" />
-            <Image id='homepage-3' src='/assets/homepage-3.jpg' alt={`homepage photo 3`} width={200} height={200} className="" />
-            <Image id='homepage-4' src='/assets/homepage-4.jpg' alt={`homepage photo 4`} width={200} height={200} className="" />
-            <Image id='homepage-5' src='/assets/homepage-5.jpg' alt={`homepage photo 5`} width={200} height={200} className="" />
-            <Image id='homepage-6' src='/assets/homepage-6.jpg' alt={`homepage photo 6`} width={200} height={200} className="" />
-            <Image id='homepage-7' src='/assets/homepage-7.jpg' alt={`homepage photo 7`} width={200} height={200} className="" />
+          <div className="relative flex justify-center items-center picture-height w-auto">
+            <Image src={images[image].src} alt={images[image].alt} width={images[image].width} height={500} className="" />
           </div>
         </section>
         <hr className="my-10"></hr>

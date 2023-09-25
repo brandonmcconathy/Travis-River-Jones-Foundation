@@ -47,6 +47,10 @@ html {
   transition-duration: 1s;
 }
 
+.picture-height {
+  height: 500px;
+}
+
 .learn-more:hover h2 {
   opacity: 1;
   animation: fadeInOutAnimation linear 2s;
@@ -126,3 +130,46 @@ html {
   }
 }
 
+.homepage-0 {
+  left: -200%;
+}
+
+.homepage-1 {
+  left: -200%;
+  margin-left: -200px;
+}
+
+.homepage-2 {
+  left: -200%;
+  margin-left: -400px;
+}
+
+.homepage-3 {
+  left: -200%;
+  margin-left: -200px;
+}
+
+.homepage-4 {
+  left: -200%;
+  margin-left: -200px;
+}
+
+.homepage-4 {
+  left: -200%;
+  margin-left: -200px;
+}
+
+.homepage-5 {
+  left: -200%;
+  margin-left: -200px;
+}
+
+.homepage-6 {
+  left: -200%;
+  margin-left: -200px;
+}
+
+.homepage-7 {
+  left: -200%;
+  margin-left: -200px;
+}
