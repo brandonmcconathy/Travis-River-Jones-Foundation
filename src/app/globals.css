@@ -96,6 +96,18 @@ html {
   }
 }
 
+.img-fade-out {
+  animation: imgFadeOutAnimation ease 2s
+}
+@keyframes imgFadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .fade-in {
   animation: fadeInAnimation ease 4s;
   animation-delay: 1s;
