@@ -57,14 +57,14 @@ export default function Homepage() {
         </div>
         <section className="mt-10">
           <div className="relative flex justify-center items-center picture-height w-auto mx-2">
-            <Image id="homepage-0" src={'/assets/homepage-0.jpg'} alt={'homepage-0'} width={333} height={500} className="rounded-xl box-pop" />
-            <Image id="homepage-1" src={'/assets/homepage-1.jpg'} alt={'homepage-1'} width={750} height={500} className="hidden rounded-xl box-pop" />
-            <Image id="homepage-2" src={'/assets/homepage-2.jpg'} alt={'homepage-2'} width={333} height={500} className="hidden rounded-xl box-pop" />
-            <Image id="homepage-3" src={'/assets/homepage-3.jpg'} alt={'homepage-3'} width={750} height={500} className="hidden rounded-xl box-pop" />
-            <Image id="homepage-4" src={'/assets/homepage-4.jpg'} alt={'homepage-4'} width={888} height={500} className="hidden rounded-xl box-pop" />
-            <Image id="homepage-5" src={'/assets/homepage-5.jpg'} alt={'homepage-5'} width={284} height={500} className="hidden rounded-xl box-pop" />
-            <Image id="homepage-6" src={'/assets/homepage-6.jpg'} alt={'homepage-6'} width={750} height={500} className="hidden rounded-xl box-pop" />
-            <Image id="homepage-7" src={'/assets/homepage-7.jpg'} alt={'homepage-7'} width={333} height={500} className="hidden rounded-xl box-pop" />
+            <Image id="homepage-0" src={'/assets/homepage-0.jpg'} alt={'homepage-0'} width={333} height={500} priority className="rounded-xl box-pop" />
+            <Image id="homepage-1" src={'/assets/homepage-1.jpg'} alt={'homepage-1'} width={750} height={500} priority className="hidden rounded-xl box-pop" />
+            <Image id="homepage-2" src={'/assets/homepage-2.jpg'} alt={'homepage-2'} width={333} height={500} priority className="hidden rounded-xl box-pop" />
+            <Image id="homepage-3" src={'/assets/homepage-3.jpg'} alt={'homepage-3'} width={750} height={500} priority className="hidden rounded-xl box-pop" />
+            <Image id="homepage-4" src={'/assets/homepage-4.jpg'} alt={'homepage-4'} width={888} height={500} priority className="hidden rounded-xl box-pop" />
+            <Image id="homepage-5" src={'/assets/homepage-5.jpg'} alt={'homepage-5'} width={284} height={500} priority className="hidden rounded-xl box-pop" />
+            <Image id="homepage-6" src={'/assets/homepage-6.jpg'} alt={'homepage-6'} width={750} height={500} priority className="hidden rounded-xl box-pop" />
+            <Image id="homepage-7" src={'/assets/homepage-7.jpg'} alt={'homepage-7'} width={333} height={500} priority className="hidden rounded-xl box-pop" />
           </div>
         </section>
         <hr className="my-10"></hr>
