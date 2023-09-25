@@ -3,7 +3,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import SeeMore from "./components/seemore"
-import { images } from "./images"
 import { useRef, useState } from "react"
 
 
