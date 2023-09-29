@@ -12,14 +12,14 @@ export default function Homepage() {
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
-  //     let nextImage = (image + 1) % 8
+  //     let nextImage = (image + 1) % 7
   //     document.getElementById(`homepage-${image}`).style.display = 'none'
   //     document.getElementById(`homepage-${nextImage}`).style.display = 'block'
   //     document.getElementById(`homepage-${image}`).classList.remove('img-fade-in')
   //     document.getElementById(`homepage-${nextImage}`).classList.add('img-fade-in')
       
   //     setImage((image) => {
-  //       return (image + 1) % 8
+  //       return (image + 1) % 7
   //     })
   //   }, 5000)
   //   return () => clearInterval(interval)
@@ -65,7 +65,6 @@ export default function Homepage() {
             <Image id="homepage-4" src={'/assets/homepage-4.jpg'} alt={'homepage-4'} width={888} height={500} priority className="hidden rounded-xl box-pop" />
             <Image id="homepage-5" src={'/assets/homepage-5.jpg'} alt={'homepage-5'} width={284} height={500} priority className="hidden rounded-xl box-pop" />
             <Image id="homepage-6" src={'/assets/homepage-6.jpg'} alt={'homepage-6'} width={750} height={500} priority className="hidden rounded-xl box-pop" />
-            <Image id="homepage-7" src={'/assets/homepage-7.jpg'} alt={'homepage-7'} width={333} height={500} priority className="hidden rounded-xl box-pop" />
           </div>
         </section> */}
         <hr className="my-10"></hr>
