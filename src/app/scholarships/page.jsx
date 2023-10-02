@@ -61,7 +61,7 @@ export default function Scholarships() {
             <h1 className="text-amber-100 font-bold text-2xl mb-1">There are currently no active scholarships</h1>
             <h2 className="text-gray-300 text-lg">Please check back later</h2>
           </div>}
-          <div className="bg-white w-[97] mx-auto p-4 rounded-xl mt-16 text-center mb-20 sm:w-5/6 md:w-9/12 lg:w-2/3">
+          <div className="bg-white w-[97] mx-auto p-4 rounded-xl mt-16 text-center mb-20 box-pop sm:w-5/6 md:w-9/12 lg:w-2/3">
             <h1 id="email-text" className="font-bold text-lg mb-6">Enter your email to be notified about new scholarships</h1>
             <form id='email-form' onSubmit={handleSubmit} className="flex flex-col items-center gap-6">
               <input type="email" onChange={handleChange} placeholder='Email' required className="bg-amber-100 w-11/12 box-pop px-4 py-2 rounded-xl font-semibold outline-none focus:ring focus:ring-gray-300 transition duration-300 sm:w-5/6 lg:w-9/12"></input>
