@@ -8,22 +8,22 @@ import { useState, useEffect } from "react"
 
 export default function Homepage() {
 
-  // const [image, setImage] = useState(0)
+  const [image, setImage] = useState(0)
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     let nextImage = (image + 1) % 7
-  //     document.getElementById(`homepage-${image}`).style.display = 'none'
-  //     document.getElementById(`homepage-${nextImage}`).style.display = 'block'
-  //     document.getElementById(`homepage-${image}`).classList.remove('img-fade-in')
-  //     document.getElementById(`homepage-${nextImage}`).classList.add('img-fade-in')
+  useEffect(() => {
+    const interval = setInterval(() => {
+      let nextImage = (image + 1) % 7
+      document.getElementById(`homepage-${image}`).style.display = 'none'
+      document.getElementById(`homepage-${nextImage}`).style.display = 'block'
+      document.getElementById(`homepage-${image}`).classList.remove('img-fade-in')
+      document.getElementById(`homepage-${nextImage}`).classList.add('img-fade-in')
       
-  //     setImage((image) => {
-  //       return (image + 1) % 7
-  //     })
-  //   }, 5000)
-  //   return () => clearInterval(interval)
-  // },[image])
+      setImage((image) => {
+        return (image + 1) % 7
+      })
+    }, 5000)
+    return () => clearInterval(interval)
+  },[image])
 
   return (
       <div className="-m-4">
@@ -56,7 +56,7 @@ export default function Homepage() {
             </section>
           </Link>
         </div>
-        {/* <section className="mt-10">
+        <section className="mt-10">
           <div className="relative flex justify-center items-center picture-height w-auto mx-2">
             <Image id="homepage-0" src={'/assets/homepage-0.jpg'} alt={'homepage-0'} width={333} height={500} priority className="rounded-xl box-pop" />
             <Image id="homepage-1" src={'/assets/homepage-1.jpg'} alt={'homepage-1'} width={750} height={500} priority className="hidden rounded-xl box-pop" />
@@ -66,7 +66,7 @@ export default function Homepage() {
             <Image id="homepage-5" src={'/assets/homepage-5.jpg'} alt={'homepage-5'} width={284} height={500} priority className="hidden rounded-xl box-pop" />
             <Image id="homepage-6" src={'/assets/homepage-6.jpg'} alt={'homepage-6'} width={750} height={500} priority className="hidden rounded-xl box-pop" />
           </div>
-        </section> */}
+        </section>
         <hr className="my-10"></hr>
         <footer className="text-center text-lg text-white flex flex-col items-center mb-32 md:text-2xl">
           <Link href='/contact' className="hover:text-gray-400 transition duration-500 py-3 px-5 md:border-b">Feel free to contact us with any questions you may have.</Link>
