@@ -70,18 +70,8 @@ html {
   }
 }
 
-.move-across-screen {
-  left: 0%;
-  animation: acrossScreenAnimation linear 20s;
-  animation-iteration-count: 1;
-}
-@keyframes acrossScreenAnimation {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: -100%;
-  }
+.gallery-fade {
+  animation: imgFadeInAnimation ease-out 1.2s;
 }
 
 .img-fade-in {

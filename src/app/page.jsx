@@ -15,8 +15,8 @@ export default function Homepage() {
       let nextImage = (image + 1) % 7
       document.getElementById(`homepage-${image}`).style.display = 'none'
       document.getElementById(`homepage-${nextImage}`).style.display = 'block'
-      document.getElementById(`homepage-${image}`).classList.remove('img-fade-in')
-      document.getElementById(`homepage-${nextImage}`).classList.add('img-fade-in')
+      document.getElementById(`homepage-${image}`).classList.remove('gallery-fade')
+      document.getElementById(`homepage-${nextImage}`).classList.add('gallery-fade')
       
       setImage((image) => {
         return (image + 1) % 7
