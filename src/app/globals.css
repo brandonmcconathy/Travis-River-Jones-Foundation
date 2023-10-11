@@ -39,7 +39,7 @@ html {
 
 .homepage-img-text {
   transform: translate(-50%, -50%);
-  text-shadow: black 0 0 1px;
+  text-shadow: white 0 0 1px;
 }
 
 .section-transition {
