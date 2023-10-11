@@ -27,7 +27,7 @@ export default function Homepage() {
 
   return (
       <div className="-m-4">
-        <section className="homepage-img relative select-none text-white">
+        <section className="h-screen relative select-none text-white">
           <Image src='/assets/hero-large.jpg' alt="hero image" fill priority className="img-fade-in hidden md:block" />
           <Image src='/assets/hero-small.jpg' alt="hero image" fill priority className="img-fade-in md:hidden" />
           <h1 className="opacity-0 text-5xl text-center absolute top-1/4 left-1/2 homepage-img-text fade-in font-semibold">Travis River Jones Foundation</h1>
