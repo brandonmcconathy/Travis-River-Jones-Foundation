@@ -75,8 +75,8 @@ html {
 }
 
 .img-fade-in {
-  animation: imgFadeInAnimation ease-out, imgBlurAnimation linear;
-  animation-duration: 1.2s, 3.5s;
+  animation: imgBlurAnimation linear;
+  animation-duration: 3.5s;
   animation-fill-mode: forwards;
 }
 @keyframes imgFadeInAnimation {
