@@ -88,7 +88,7 @@ export function Form1({pageId}) {
       <div className='w-[97] bg-amber-100 font-semibold m-auto my-10 py-5 px-4 rounded-2xl box-pop sm:w-5/6 md:my-12 md:px-8 lg:w-3/4 xl:my-20 xl:w-2/3'>
         <h1 className="text-center text-3xl font-bold mb-8">{scholarshipData.title}</h1>
         <section>
-          <p className="text-lg text-center">Thank you for your interest in the Travis River Jones Foundation EMT reimbursement scholarship program. Please read through the scholarship rules before you apply.</p>
+          <p className="text-lg text-center">Thank you for your interest in the {scholarshipData.title}. This is a reimbursement scholarship. Please read through the scholarship rules before you apply.</p>
           <ul className=" mx-4 list-disc flex flex-col gap-3 mt-8 mb-12 md:mx-10 lg:mx-16">
             <li>You must  successfully complete an EMT program with American EMT Academy or Chaffey Community College within 180 days of receiving the scholarship. Please notify us of your course dates.</li>
             <div className="flex flex-col text-center bg-white mx-auto my-2 px-6 py-4 rounded-xl box-pop underline">
@@ -96,9 +96,9 @@ export function Form1({pageId}) {
               <a href="https://www.chaffey.edu/acc/pcs/pcs-academic/emt.php" target="_blank" className="hover:text-gray-400  transition duration-300">Chaffey College</a>
             </div>
             <li>Scholarship is on a reimbursement basis. You will be required to pay for your course and meet all minimum requirements through American EMT Academy or Chaffey College. When you receive your course completion certificate  you will be eligible for reimbursement. </li>
-            <li>Current reimbursement is limited to a maximum of $1,150 ($1000 tuition and $150 for textbook). Receipt and course completion certificate must be submitted within the 180 day threshold.</li>
+            <li>Current reimbursement is limited to a maximum of $1,150 ($1000 tuition and $150 for textbook).</li>
             <li>Current applications are being accepted through <Deadline timeExpired={scholarshipData.timeExpired}/>.</li>
-            <li>Successful recipient(s) of the TRJ Foundation scholarship will be notified via email and one phone attempt by <AfterDeadline timeExpired={scholarshipData.timeExpired}/> and will have 72 hours to respond.</li>
+            <li>Successful recipient(s) of the TRJ Foundation scholarship will be notified by <AfterDeadline timeExpired={scholarshipData.timeExpired}/> and will have 72 hours to respond.</li>
           </ul>
           <p className="text-center mb-4">Please contact Heather or Michael Jones with any questions at travisriverjonesfoundation@gmail.com</p>
           <p className="text-center">Please only apply if you have read, understand and agree to all rules and are ready to begin an EMT program.</p>
