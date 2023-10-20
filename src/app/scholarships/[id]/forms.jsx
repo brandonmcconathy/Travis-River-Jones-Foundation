@@ -125,7 +125,7 @@ export function Form1({pageId}) {
             <input type="text" name='answer1' value={formData.answer1} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-8 flex flex-col mx-2">
-            <label className="font-bold text-lg leading-snug">Why do you want to be an EMT?</label>
+            <label className="font-bold text-lg leading-snug">Why do you want to be an EMT and what are your career goals?</label>
             <textarea rows='4' name='answer2' value={formData.answer2} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
           </div>
           <div className="mb-10 flex flex-col mx-2">
