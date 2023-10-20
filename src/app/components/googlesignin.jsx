@@ -3,10 +3,9 @@ import { auth } from "../../../lib/firebase";
 
 export default function GoogleSignIn() {
 
-  const provider = new GoogleAuthProvider()
-
   const handleClick = async () => {
-    signInWithPopup(auth, provider)
+    const provider = new GoogleAuthProvider()
+    await signInWithPopup(auth, provider)
     .catch((error) => {
       
     })
