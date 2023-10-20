@@ -37,7 +37,7 @@ export default function Homepage() {
           <Link id='top-div' href="/about" className="bg-amber-100 py-12 px-10 box-pop text-center learn-more section-transition hover:py-24 hover:bg-amber-50">
             <section>
               <h1 className="text-3xl font-semibold mb-2">Our Mission</h1>
-              <p className="text-xl mb-12">Empower positive change by promoting kindness, goodwill, and enriching the lives of others through our Kindness and EMT Scholarships.</p>
+              <p className="text-xl mb-12">Empower positive change by promoting kindness, goodwill, and enriching the lives of others through Kindness and EMT Scholarships.</p>
               <h2 className="opacity-0 text-xl -mb-16 font-semibold text-cyan-800 transition duration-1000">Learn more about us</h2>
             </section>
           </Link>
