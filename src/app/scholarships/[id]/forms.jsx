@@ -108,33 +108,33 @@ export function Form1({pageId}) {
   
         <form autoComplete='off' onSubmit={handleReview} className="flex flex-col sm:mx-4 md:mx-8 lg:mx-16 2xl:mx-48">
           <div className="mb-8 flex flex-col mx-2 md:w-3/4 lg:w-2/3">
-            <label className="font-bold text-lg">Name</label>
-            <input type="text" name='name' value={formData.name} onChange={handleChange} required 
+            <label htmlFor='name' className="font-bold text-lg">Name</label>
+            <input type="text" id='name' name='name' value={formData.name} onChange={handleChange} required 
             className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-8 flex flex-col mx-2 md:w-3/4 lg:w-2/3">
-            <label className="font-bold text-lg">Email</label>
-            <input type="email" name='email' value={formData.email} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
+            <label htmlFor='email' className="font-bold text-lg">Email</label>
+            <input type="email" id='email' name='email' value={formData.email} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-8 flex flex-col mx-2 md:w-3/4 lg:w-2/3">
-            <label className="font-bold text-lg">Best Contact Number</label>
-            <input type="tel" name='number' value={formData.number} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
+            <label htmlFor='number' className="font-bold text-lg">Best Contact Number</label>
+            <input type="tel" id='number' name='number' value={formData.number} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-8 flex flex-col mx-2">
-            <label className="font-bold text-lg leading-snug">How did you hear about this scholarship?</label>
-            <input type="text" name='answer1' value={formData.answer1} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
+            <label htmlFor='answer1' className="font-bold text-lg leading-snug">How did you hear about this scholarship?</label>
+            <input type="text" id='answer1' name='answer1' value={formData.answer1} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-8 flex flex-col mx-2">
-            <label className="font-bold text-lg leading-snug">Why do you want to be an EMT and what are your career goals?</label>
-            <textarea rows='4' name='answer2' value={formData.answer2} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
+            <label htmlFor="answer2" className="font-bold text-lg leading-snug">Why do you want to be an EMT and what are your career goals?</label>
+            <textarea rows='4' id='answer2' name='answer2' value={formData.answer2} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
           </div>
           <div className="mb-10 flex flex-col mx-2">
-            <label className="font-bold text-lg leading-snug">How would this scholarship benefit you?</label>
-            <textarea rows='4' cols='50' name='answer3' value={formData.answer3} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
+            <label htmlFor="answer3" className="font-bold text-lg leading-snug">How would this scholarship benefit you?</label>
+            <textarea rows='4' id="answer3" name='answer3' value={formData.answer3} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
           </div>
           <div className="mb-10 flex flex-col mx-2">
-            <label className="font-bold text-lg leading-snug">Tell us about you last act of kindness or an incident where you helped someone when you didn't need to.</label>
-            <textarea rows='4' cols='50' name='answer4' value={formData.answer4} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
+            <label htmlFor="answer4" className="font-bold text-lg leading-snug">Tell us about you last act of kindness or an incident where you helped someone when you didn't need to.</label>
+            <textarea rows='4' id="answer4" name='answer4' value={formData.answer4} onChange={handleChange} required className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></textarea>
           </div>
           <div className="mb-10 mx-auto w-11/12 flex gap-4 items-center md:w-3/4">
             <input type="checkbox" onChange={checkChange} className="w-1/6"></input>
