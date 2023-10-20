@@ -84,8 +84,8 @@ const ScholarshipDisplay = ({scholarshipData}) => {
     return(
       <div href={{pathname: `/scholarships/${id}`}} className="flex flex-col m-auto bg-amber-100 mb-10 px-4 py-4 rounded-xl w-full box-pop">
           <h1 className="font-bold text-2xl break-words text-clip mb-3 text-center sm:text-3xl">{title}</h1>
-          <h1 className="break-words mb-4 mx-2 sm:text-lg sm:mx-4 lg:mx-8">{description}</h1>
-          <div className="flex justify-between gap-3 mx-4 lg:mx-8">
+          <h1 className="break-words text-center mb-4 mx-2 sm:text-lg sm:mx-4 lg:mx-8">{description}</h1>
+          <div className="flex justify-between items-center gap-3 mx-4 lg:mx-8">
             <h1 className="font-semibold text-center">{timeRemaining.days} days {timeRemaining.hours} hours remaining</h1>
             <Link href={{pathname: `/scholarships/${id}`}} className="bg-red-800 px-4 py-2 rounded-xl text-center font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">Apply Now</Link>
           </div>
