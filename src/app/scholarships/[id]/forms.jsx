@@ -162,7 +162,7 @@ const Deadline = ({timeExpired}) => {
   }
 
   return(
-    <span>{`${expiredDate.hour}:${expiredDate.min} ${expiredDate.time} ${expiredDate.month}, ${expiredDate.day}, ${expiredDate.year}`}</span>
+    <span>{`${expiredDate.hour}:${expiredDate.min} ${expiredDate.time} ${expiredDate.month} ${expiredDate.day}, ${expiredDate.year}`}</span>
   )
 }
 
@@ -171,6 +171,6 @@ const AfterDeadline = ({timeExpired}) => {
   const expiredDate = timeConverter(expiredUnix/1000 + 172800)
 
   return(
-    <span>{`${expiredDate.month}, ${expiredDate.day}, ${expiredDate.year}`}</span>
+    <span>{`${expiredDate.month} ${expiredDate.day}, ${expiredDate.year}`}</span>
   )
 }
