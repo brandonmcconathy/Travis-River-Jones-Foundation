@@ -41,7 +41,8 @@ export function Form1({pageId}) {
       name: formData.name,
       email: formData.email,
       number: formData.number,
-      answers: [formData.answer1, formData.answer2, formData.answer3, formData.answer4]
+      answers: [formData.answer1, formData.answer2, formData.answer3, formData.answer4],
+      date: Date.now()
     })
     setSubmitted(true)
   }
