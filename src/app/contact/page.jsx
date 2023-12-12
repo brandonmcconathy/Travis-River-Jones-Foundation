@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function Contact() {
   return(
     <div>
@@ -7,6 +9,16 @@ export default function Contact() {
         <div className="bg-white mx-auto p-2 rounded-xl box-pop sm:px-4 xl:px-8 xl:py-4">
           <p className="font-bold mb-2 sm:text-lg lg:text-xl">(909)-908-7654</p>
           <p className="text-sm font-bold sm:text-lg xl:text-xl">travisriverjonesfoundation@gmail.com</p>
+        </div>
+        <div className="flex flex-col items-center justify-center py-5 font-semibold gap-10 sm:flex-row">
+          <div className="flex items-center justify-center gap-2 sm:justify-end">
+            <img src="/instagram.png" className="w-1/12" />
+            <Link href='https://instagram.com/travisriverjonesfoundation' target="_blank">travisriverjonesfoundation</Link>
+          </div>
+          <div className="flex items-center justify-center gap-2 sm:justify-start">
+            <img src="/facebook.png" className="w-1/12" />
+            <Link href='https://www.facebook.com/travisriverjonesfoundation' target="_blank">travisriverjonesfoundation</Link>
+          </div>
         </div>
       </div>
     </div>
