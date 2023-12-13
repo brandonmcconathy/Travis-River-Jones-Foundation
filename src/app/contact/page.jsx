@@ -10,7 +10,7 @@ export default function Contact() {
           <p className="font-bold mb-2 sm:text-lg lg:text-xl">(909)-908-7654</p>
           <p className="text-sm font-bold sm:text-lg xl:text-xl">travisriverjonesfoundation@gmail.com</p>
         </div>
-        <div className="flex flex-col items-center justify-center py-5 font-semibold gap-4 sm:flex-row sm:gap-10">
+        <div className="flex flex-col items-center justify-center pt-5 font-semibold gap-4 sm:flex-row sm:gap-10">
           <div className="flex items-center justify-center gap-2 sm:justify-end">
             <img src="/instagram.png" className="w-1/12" />
             <Link href='https://instagram.com/travisriverjonesfoundation' target="_blank">travisriverjonesfoundation</Link>
