@@ -13,11 +13,11 @@ export default function Contact() {
         <div className="flex flex-col items-center justify-center pt-5 font-semibold gap-4 sm:flex-row sm:gap-10">
           <div className="flex items-center justify-center gap-2 sm:justify-end">
             <img src="/instagram.png" className="w-1/12" />
-            <Link href='https://instagram.com/travisriverjonesfoundation' target="_blank">@travisriverjonesfoundation</Link>
+            <Link href='https://instagram.com/travisriverjonesfoundation' target="_blank" className="hover:text-cyan-800 transition duration-300">@travisriverjonesfoundation</Link>
           </div>
           <div className="flex items-center justify-center gap-2 sm:justify-start">
             <img src="/facebook.png" className="w-1/12" />
-            <Link href='https://www.facebook.com/travisriverjonesfoundation' target="_blank">@travisriverjonesfoundation</Link>
+            <Link href='https://www.facebook.com/travisriverjonesfoundation' target="_blank" className="hover:text-cyan-800 transition duration-300">@travisriverjonesfoundation</Link>
           </div>
         </div>
       </div>
