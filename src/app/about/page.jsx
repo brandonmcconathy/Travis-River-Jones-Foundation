@@ -1,4 +1,4 @@
-export default function Contact() {
+export default function About() {
   return(
     <div>
       <h1 className="text-center text-6xl text-white my-12">About</h1>
