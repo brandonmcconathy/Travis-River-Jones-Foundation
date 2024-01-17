@@ -2,7 +2,7 @@
 
 *Built using React.js, Next.js, Firebase, Javascript, and Tailwind CSS.*
 
-[Live Website](https://trjfoundation.vercel.app/)
+[Live Website](https://www.trjf.org/)
 
 - Displays information about the foundation.
 - Allows applicants to submit applications for scholarships.
