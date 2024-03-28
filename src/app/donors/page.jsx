@@ -30,7 +30,7 @@ export default function Donors() {
   return(
     <div className="mb-12">
       <h1 className="text-center text-6xl text-white mt-12 mb-12">Donors</h1>
-      <h2 className="bg-amber-100 m-auto text-center text-xl font-bold rounded-xl mb-16 px-4 py-4 w-[97] box-pop sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-5/12 2xl:w-1/3">The Travis River Jones Foundation would like to give special thanks to the following donors for their continued support.</h2>
+      <h2 className="bg-amber-100 m-auto text-center text-xl font-semibold rounded-xl mb-16 px-4 py-4 w-[97] box-pop sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-5/12 2xl:w-1/3">The Travis River Jones Foundation would like to give special thanks to the following donors for their continued support.</h2>
       {!loading ?
       donorData.length !== 0 ?
         donorData.map((donor) => <DonorDisplay donor={donor} key={donor.name} />) :
