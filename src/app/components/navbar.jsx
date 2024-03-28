@@ -7,8 +7,8 @@ import { AiOutlineClose } from 'react-icons/ai'
 
 export default function Navbar() {
 
-  const navbarItems = ['About', 'Scholarships', 'Recipients', 'Contact', 'Donate']
-  const navMenuItems = ['Home', 'About', 'Scholarships', 'Recipients', 'Contact', 'Donate']
+  const navbarItems = ['About', 'Scholarships', 'Recipients', 'Donors', 'Contact', 'Donate']
+  const navMenuItems = ['Home', 'About', 'Scholarships', 'Recipients', 'Donors', 'Contact', 'Donate']
   const [navState, setNavState] = useState(false)
 
   const handleClick = () => {
@@ -43,7 +43,7 @@ export default function Navbar() {
   return(
     <>
       <nav className={'hidden lg:flex bg-amber-100 items-center justify-between font-semibold h-20 px-16'}>
-        <h1 className="text-2xl">
+        <h1 className="text-2xl text-center">
           <Link href="/">Travis River Jones Foundation</Link>
         </h1>
         <ul className="flex gap-8 text-lg">
