@@ -8,8 +8,8 @@ import { AiOutlineClose } from 'react-icons/ai'
 
 export default function AdminNavbar() {
 
-  const navbarItems = ['Scholarships', 'Applications', 'Recipients', 'Emails']
-  const navMenuItems = ['Home', 'Scholarships', 'Applications', 'Recipients', 'Emails']
+  const navbarItems = ['Scholarships', 'Applications', 'Recipients', 'Donors', 'Emails']
+  const navMenuItems = ['Home', 'Scholarships', 'Applications', 'Recipients', 'Donors', 'Emails']
   const [adminNavState, setAdminNavState] = useState(false)
 
   const handleClick = () => {
