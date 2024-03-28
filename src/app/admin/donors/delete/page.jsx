@@ -66,6 +66,7 @@ const DonorDisplay = ({donor}) => {
         <div className="m-auto bg-white mb-8 px-4 py-4 rounded-xl w-[97] box-pop sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-5/12 2xl:w-1/3">
           <div className="flex flex-col items-center justify-center w-full">
             <h1 className="text-center text-2xl font-bold">{name}</h1>
+            {donor.link != '' && <a href={donor.link} target="_blank" className="mt-1 text-center text-lg font-semibold underline hover:text-gray-400  transition duration-300">{donor.linkName == '' ? 'Website' : donor.linkName}</a>}
             {!showDelete ? 
             <button onClick={changeDelete} id='confirm' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">DELETE</button> : 
             <button onClick={handleClick} id='delete' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">ARE YOU SURE?</button>}
@@ -77,6 +78,7 @@ const DonorDisplay = ({donor}) => {
           </div>
           <div className="flex flex-col items-center justify-center w-2/3">
             <h1 className="text-center text-2xl font-bold sm:text-2xl">{name}</h1>
+            {donor.link != '' && <a href={donor.link} target="_blank" className="mt-1 text-center text-lg font-semibold underline hover:text-gray-400  transition duration-300">{donor.linkName == '' ? 'Website' : donor.linkName}</a>}
             {!showDelete ? 
             <button onClick={changeDelete} id='confirm' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">DELETE</button> : 
             <button onClick={handleClick} id='delete' className="font-bold bg-red-600 px-4 py-2 rounded-xl self-end">ARE YOU SURE?</button>}
