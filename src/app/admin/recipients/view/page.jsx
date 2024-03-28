@@ -15,7 +15,7 @@ export default function ViewRecipients() {
     
       let tempData = []
     
-      querySnapshot.forEach( (doc) => {
+      querySnapshot.forEach((doc) => {
         tempData.push(doc.data())
       })
 
