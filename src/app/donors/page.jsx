@@ -11,7 +11,7 @@ export default function Donors() {
 
   useEffect(() => {
     const getDBData = async () => {
-      const q = query(collection(db, 'donors'), orderBy('year', 'desc'))
+      const q = query(collection(db, 'donors'), orderBy('name'))
       const querySnapshot = await getDocs(q)
     
       let tempData = []
@@ -43,17 +43,14 @@ export default function Donors() {
 
 const DonorDisplay = ({donor}) => {
 
-  const { name, scholarship, school, year, image } = donor
+  const { name, image } = donor
 
   return(
     <div>
       {image == '' ? 
         <div className="m-auto bg-white mb-8 px-4 py-4 rounded-xl w-[97] box-pop sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-5/12 2xl:w-1/3">
           <div className="flex flex-col items-center justify-center w-full">
-            <h1 className="text-center text-2xl font-bold mb-3">{name}</h1>
-            <h1 className="text-center mb-2">{scholarship}</h1>
-            <h1 className="text-center">{school}</h1>
-            <h1 className="text-center">{year}</h1>
+            <h1 className="text-center text-2xl font-bold">{name}</h1>
           </div>
         </div> :
         <div className="flex gap-4 m-auto bg-white mb-8 px-4 py-4 rounded-xl w-[97] box-pop sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-5/12 2xl:w-1/3">
@@ -61,10 +58,7 @@ const DonorDisplay = ({donor}) => {
             <img src={image} className="rounded-xl box-pop"></img>
           </div>
           <div className="flex flex-col items-center justify-center w-2/3">
-            <h1 className="text-center text-2xl font-bold mb-3 sm:text-2xl">{name}</h1>
-            <h1 className="text-center mb-2">{scholarship}</h1>
-            <h1 className="text-center">{school}</h1>
-            <h1 className="text-center">{year}</h1>
+            <h1 className="text-center text-2xl font-bold sm:text-2xl">{name}</h1>
           </div>
         </div>}
     </div>

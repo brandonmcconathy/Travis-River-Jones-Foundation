@@ -8,7 +8,7 @@ import { db, storage } from "../../../../../lib/firebase"
 
 export default function NewDonor() {
 
-  const [donorData, setDonorData] = useState({name: '', scholarship: '', year: '', school: '', image: ''})
+  const [donorData, setDonorData] = useState({name: '', image: ''})
   const [imageUpload, setImageUpload] = useState(null)
   const router = useRouter()
 
@@ -60,21 +60,6 @@ export default function NewDonor() {
           <div className="mb-10 flex flex-col">
             <label htmlFor="name" className="font-bold text-lg">Name:</label>
             <input type="text" name='name' id='name' value={donorData.name} onChange={handleChange} required
-            className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
-          </div>
-          <div className="mb-10 flex flex-col">
-            <label htmlFor="scholarship" className="font-bold text-lg">Scholarship:</label>
-            <input type="text" name='scholarship' id='scholarship' value={donorData.scholarship} onChange={handleChange} required
-            className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
-          </div>
-          <div className="mb-10 flex flex-col">
-            <label htmlFor="year" className="font-bold text-lg">Year:</label>
-            <input type="text" name='year' id='year' value={donorData.year} onChange={handleChange} required
-            className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
-          </div>
-          <div className="mb-10 flex flex-col">
-            <label htmlFor="school" className="font-bold text-lg">School: <span className="text-gray-700 text-sm">(optional)</span></label>
-            <input type="text" name='school' id='school' value={donorData.school} onChange={handleChange}
             className="outline-none rounded-xl px-4 py-2 shadow-xl focus:ring focus:ring-gray-300 transition duration-300"></input>
           </div>
           <div className="mb-10 flex flex-col">
