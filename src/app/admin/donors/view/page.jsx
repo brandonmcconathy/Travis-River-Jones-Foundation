@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { db } from "../../../../../lib/firebase"
-import { getDocs, collection, query } from "firebase/firestore"
+import { getDocs, collection, query, orderBy } from "firebase/firestore"
 
 export default function ViewDonor() {
 
@@ -10,7 +10,7 @@ export default function ViewDonor() {
 
   useEffect(() => {
     const getDBData = async () => {
-      const q = query(collection(db, 'donors'))
+      const q = query(collection(db, 'donors'), orderBy('name'))
       const querySnapshot = await getDocs(q)
     
       let tempData = []

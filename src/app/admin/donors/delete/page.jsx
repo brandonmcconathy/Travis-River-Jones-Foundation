@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { db, storage } from "../../../../../lib/firebase"
-import { getDocs, collection, query, doc, deleteDoc } from "firebase/firestore"
+import { getDocs, collection, query, doc, deleteDoc, orderBy } from "firebase/firestore"
 import { ref, deleteObject } from "firebase/storage"
 
 export default function DeleteDonor() {
@@ -12,7 +12,7 @@ export default function DeleteDonor() {
 
   useEffect(() => {
     const getDBData = async () => {
-      const q = query(collection(db, 'donors'))
+      const q = query(collection(db, 'donors'), orderBy('name'))
       const querySnapshot = await getDocs(q)
     
       let tempData = []
